@@ -1,13 +1,17 @@
 ---
 layout: post
-title: "Crash reporting in Firebase"
-date: 2016-05-23 12:05:30
+title: Crash reporting in Firebase
+date: {}
 description: Exploring the new crash reporting feature of Firebase
-permalink: /posts/firebase-crash-reporting
-tags: [android, firebase, crash-reporting]
-excerpt: "Exploring the new crash reporting feature of Firebase"
-twitter_card_image: /img/firebase-icon.png
+permalink: "/posts/firebase-crash-reporting"
+tags: 
+  - android
+  - firebase
+  - "crash-reporting"
+excerpt: Exploring the new crash reporting feature of Firebase
+twitter_card_image: "/img/firebase-icon.png"
 comments: true
+published: true
 ---
 
 <p align="center">
@@ -58,7 +62,7 @@ This is the usual google-services.json file. Be sure to add it to your app modul
 To use Firebase in your app, you need to add and setup the SDK within your Android app.  
 First, include the following lines to your root-level `build.gradle` file:
 
-``` groovy
+```groovy
 buildscript {
     // ...
     dependencies {
@@ -72,7 +76,7 @@ And then at your app-module's `build.gradle` file, apply the google services plu
 the bottom of the file.  
 Your `build.gradle` should look like this:
 
-``` groovy
+```groovy
 apply plugin: 'com.android.application'
 
 android {
@@ -93,7 +97,7 @@ apply plugin: 'com.google.gms.google-services'
 Now, to setup the crash reporting, you need to add the Firebase crash reporting dependency.
 Add this line to your module `build.gradle` file.
 
-``` groovy
+```groovy
 compile 'com.google.firebase:firebase-crash:9.0.0'
 ```
 
@@ -140,7 +144,7 @@ This may lead to some concurrency issues, and It's filed under the known issues 
   Firebase crash doesn't seem to have that  "utility" setup method. Instead, to log all unhandled exceptions,
   you probably want to add lines like:
 
-  ``` java
+  ```java
 	  Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
           @Override
           public void uncaughtException(Thread thread, Throwable ex) {
