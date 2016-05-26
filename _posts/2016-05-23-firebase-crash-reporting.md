@@ -144,14 +144,14 @@ This may lead to some concurrency issues, and It's filed under the known issues 
   Firebase crash doesn't seem to have that  "utility" setup method. Instead, to log all unhandled exceptions,
   you probably want to add lines like:
 
-  ```java
-	  Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
-          @Override
-          public void uncaughtException(Thread thread, Throwable ex) {
-              FirebaseCrash.report(ex);
-          }
-      });
-  ```
+```java
+	Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+      @Override
+      public void uncaughtException(Thread thread, Throwable ex) {
+      	FirebaseCrash.report(ex);
+      }
+    });
+```
 
 ### 7. What's more?
 One really cool thing about Firebase crash reporting is the _Cluster_ feature. Basically,
