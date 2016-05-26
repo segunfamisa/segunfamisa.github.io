@@ -142,11 +142,11 @@ This may lead to some concurrency issues, and It's filed under the known issues 
   you probably want to add lines like:
 
 ```java
-	Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
-      @Override
-      public void uncaughtException(Thread thread, Throwable ex) {
-      	FirebaseCrash.report(ex);
-      }
+    Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+        @Override
+        public void uncaughtException(Thread thread, Throwable ex) {
+            FirebaseCrash.report(ex);
+        }
     });
 ```
 
