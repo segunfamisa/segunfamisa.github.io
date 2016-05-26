@@ -16,7 +16,7 @@ url: http://segunfamisa.github.io
 ####################################
 #
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 excerpt_separator: <!--more-->
 sass:
   sass_dir: _sass
