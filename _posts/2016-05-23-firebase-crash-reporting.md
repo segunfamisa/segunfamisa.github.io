@@ -18,7 +18,7 @@ published: true
 
 Last week, at [Google I/O](https://events.google.com/io2016/), Google announced a
 number of interesting new features in Firebase. The new Firebase is said to be a [_"Unified app platform for mobile developers"_](https://firebase.googleblog.com/2016/05/firebase-expands-to-become-unified-app-platform.html)
-adding new tools to help develop faster, improve app quality, engage users and monitize apps. You
+adding new tools to help develop faster, improve app quality, engage users and monetize apps. You
 can check out this intro video [here](https://youtu.be/fgT6r4f9Apc).
 
 Some of the new features in the Firebase upgrade include:  
