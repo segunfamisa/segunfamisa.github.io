@@ -8,7 +8,6 @@ tags: [android, layouts, constraint layout, android studio]
 excerpt: Quick intro to the new layout editor and ConstraintLayout in Android
 twitter_card_image: "/img/constraintlayout-header.png"
 comments: true
-published: true
 ---
 
 <p align="center">
