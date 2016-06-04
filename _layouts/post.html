@@ -34,6 +34,12 @@ layout: default
     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
+  {% if page.header_image %}
+      <p align="center">
+          <img src="{{ site.url }}{{ page.header_image }}">
+      </p>
+  {% endif %}
+
   <article class="post-content">
     {{ content }}
   </article>
