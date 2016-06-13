@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Remote config with Firebase
-date: 2016-06-12 08:05:30
+date: 2016-06-13 06:05:30
 description: Update your app without updating your app
 permalink: "/posts/firebase-remote-config"
 tags: [android, firebase, remote config]
@@ -141,7 +141,8 @@ When you apply conditions to some values, your dashboard would look like this:
 
 ![](/img/remote-config-conditions.png)
 
-You should note that there's a limit of 2000 parameters and up to 100 conditions.
+You should note that there's a limit of 2000 parameters and up to 100 conditions and parameter keys can be
+256 characters long.
 
 ### Implement remote config on your app.
 To use the remote config library on your app, you need to get a remote config object
