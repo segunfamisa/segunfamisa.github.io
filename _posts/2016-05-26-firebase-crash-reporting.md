@@ -4,7 +4,7 @@ title: Crash reporting in Firebase
 date: 2016-05-26 12:05:30
 description: Exploring the new crash reporting feature of Firebase
 permalink: "/posts/firebase-crash-reporting"
-tags: [android, firebase, crash-reporting]
+tags: [android, firebase, crash reporting]
 excerpt: Exploring the new crash reporting feature of Firebase
 twitter_card_image: "/img/firebase-icon.png"
 comments: true
@@ -35,7 +35,9 @@ quality of apps that you ship.
 The new Firebase works with the new Google Play Services 9.0, and to use it in Android Studio,
 you need to follow these steps:  
 
-### 1. Pre-requisites
+### Setup Firebase
+
+#### 1. Pre-requisites
 Ensure your development environment meets the pre-requisite requirements. The Pre-requisites as seen [here](https://firebase.google.com/docs/android/setup#prerequisites) are:
 
   * An Android device running Google Play services 9.0.0 or later  
@@ -43,7 +45,7 @@ Ensure your development environment meets the pre-requisite requirements. The Pr
   * Android Studio 1.5 or higher  
   * An Android Studio project and its package name.
 
-### 2. Add Firebase to your app
+#### 2. Add Firebase to your app
 Next step is to add Firebase to your app. To do this, you need to create a project
 on the [Firebase console](https://console.firebase.google.com/).  
 
@@ -55,7 +57,7 @@ You'll be prompted to add your package name, and also to download a config file.
 This is the usual google-services.json file. Be sure to add it to your app module's directory.
 (e.g /app)
 
-### 3. Add the SDK to your app
+#### 3. Add the SDK to your app
 To use Firebase in your app, you need to add and setup the SDK within your Android app.  
 First, include the following lines to your root-level `build.gradle` file:
 
@@ -90,7 +92,7 @@ apply plugin: 'com.google.gms.google-services'
 ```
 
 
-### 4. Setup crash reporting
+### Setup crash reporting
 Now, to setup the crash reporting, you need to add the Firebase crash reporting dependency.
 Add this line to your module `build.gradle` file.
 
@@ -98,7 +100,7 @@ Add this line to your module `build.gradle` file.
 compile 'com.google.firebase:firebase-crash:9.0.0'
 ```
 
-### 5. Create your first crash report
+### Create your first crash report
 Now, that we've finished setting up, let's proceed to create our first crash report.
 Add the following lines to your activity:
 
@@ -126,7 +128,7 @@ If you're interested in making that log show on your logcat, use:
     FirebaseCrash.logcat("MainActivity started");
 ```
 
-### 6. Issues?
+### Issues?
 Firebase crash reporting is still in Beta, so, there are definitely some issues for now,
 and I hope they continue to improve the product.
 
@@ -152,7 +154,7 @@ This may lead to some concurrency issues, and It's filed under the known issues 
     });
 ```
 
-### 7. What's more?
+### What's more?
 One really cool thing about Firebase crash reporting is the _Cluster_ feature. Basically,
 firebase arranges errors in clusters of similar stack traces and by the severity of impact on your users.
 
