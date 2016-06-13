@@ -263,7 +263,7 @@ because the values fetched are only cached and not activated without that.
 #### Use fetched values.
 
 Now that we've fetched the values, we need to use them. We need to retrieve the values from the
-[FirebaseRemoteConfig](remote-config-doc) object using the same keys specified. For example,
+[FirebaseRemoteConfig](https://firebase.google.com/docs/reference/android/com/google/firebase/remoteconfig/FirebaseRemoteConfig) object using the same keys specified. For example,
 to set the toolbar color when our promo is on, we do something like:
 
 ```java
@@ -312,6 +312,3 @@ If you found this post useful, kindly share. Comments, corrections and questions
 You can now set that `AppConstants` file free :)
 
 Cheers.
-
-
-[remote-config-doc] https://firebase.google.com/docs/reference/android/com/google/firebase/remoteconfig/FirebaseRemoteConfig
