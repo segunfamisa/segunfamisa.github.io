@@ -18,7 +18,7 @@ Formerly an Android Developer at [Truppr][truppr], now I build awesome stuff at 
 
 I'm interested in `Android`, `research`, `artificial intelligence`, `computing` `robotics`, `IoT`
 
-I am Budding Karateka. :D
+I am a Budding Karateka. :D
 
 ### Contact me
 
