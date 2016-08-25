@@ -7,8 +7,8 @@ title: Segun Famisa's blog
 email: segunfamisa@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Hey, I'm an android developer, I love to create :)
-# url: http://127.0.0.1:4000
-url: http://segunfamisa.github.io
+url: http://127.0.0.1:4000
+# url: http://segunfamisa.github.io
 
 #
 ###################################
