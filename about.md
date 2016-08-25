@@ -14,11 +14,13 @@ Hi, I am Segun Famisa. I am a Software Engineer.
 
 I program in java, python, c#, matlab, LabVIEW.
 
-Formerly an Android Developer at [Truppr][truppr], now I build awesome stuff at [Konga](https://konga.com)
+Formerly an Android Developer at [Truppr][truppr], now I'm building [KongaPay](https://kongapay.com)
 
-I'm interested in `Android`, `research`, `artificial intelligence`, `computing` `robotics`, `IoT`
+I'm interested in `Android`, `speaking at conferences`, `research`, `artificial intelligence`, `computing` `robotics`, `IoT`
 
 I am a Budding Karateka. :D
+
+I just recently became a MVB (Most valuable blogger) at [Dzone](https://dzone.com/users/2842273/segunfamisa.html)
 
 ### Contact me
 
