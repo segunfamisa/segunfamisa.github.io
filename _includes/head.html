@@ -1,4 +1,9 @@
 <head>
+    <script type="text/javascript">
+      var host = "segunfamisa.com";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+  </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,18 +19,12 @@
     <meta name="keywords" content="{{ page.tags | join: ' ' }}" >
   {% endif %}
 
-  <link rel="stylesheet" href="//www.segunfamisa.com/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//www.segunfamisa.com/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//www.segunfamisa.com/css/main.css">
+  <link rel="stylesheet" href="{{ site.url }}/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ site.url }}/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ site.url }}/css/main.css">
 
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}" />
-
-  <script type="text/javascript">
-    var host = "segunfamisa.com";
-    if ((host == window.location.host) && (window.location.protocol != "https:"))
-        window.location.protocol = "https";
-</script>
 </head>
