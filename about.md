@@ -16,11 +16,11 @@ I program in java, python, c#, matlab, LabVIEW.
 
 Formerly an Android Developer at [Truppr][truppr], now I'm building [KongaPay](https://kongapay.com)
 
-I'm interested in `Android`, `speaking at conferences`, `research`, `artificial intelligence`, `computing` `robotics`, `IoT`
+I'm interested in `Android`, `public speaking`, `research`, `artificial intelligence`, `computing` `robotics`, `IoT`
 
-I am a Budding Karateka. :D
+I am a Karateka. :D
 
-I just recently became a MVB (Most valuable blogger) at [Dzone](https://dzone.com/users/2842273/segunfamisa.html)
+I just recently became a MVB at [Dzone](https://dzone.com/users/2842273/segunfamisa.html)
 
 ### Contact me
 
