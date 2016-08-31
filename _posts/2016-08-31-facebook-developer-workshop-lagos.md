@@ -15,9 +15,9 @@ Yesterday, a friend sent me a picture of Mark Zuckerberg at my former office. I 
 was a prank until I saw it on a [major tech blog in Nigeria](http://techcabal.com/2016/08/30/mark-zuckerberg-is-in-nigeria-right-now/).
 Indeed Mark Zuckerberg, "The Zuck" was in Nigeria.
 
-News has it that Mark visited Andela, a company that his foundation
+News has it that Mark came to visit Andela, a company that his foundation
 [invested in](http://techcabal.com/2016/06/16/andela-has-raised-24-million-in-funding-from-the-chan-zuckerberg-initiative/),
-and see the tech community here in Lagos, as well as attend the Facebook Developer Workshop event.
+and the tech community here in Lagos, as well as attend the Facebook Developer Workshop event.
 
 I was able to attend the developer workshop, which was a strict invite-only event
 for those that RSVPed. In retrospect, it all makes sense.
