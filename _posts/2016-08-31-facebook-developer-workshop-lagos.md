@@ -88,9 +88,9 @@ If you're curious about what it is, you can check
 [here](http://coreylatislaw.com/sketchnoting-for-techies/).
 I did the sketchnoting when Christine was talking about Open Source projects at Facebook.
 Although, the Sketchnoting can be way better than this, I guess it's
-not so bad for a first attempt.
+not so bad for a first attempt. 🙈
 
-![Facebook Open Source Projects](http://imgur.com/a/2iWA2 "Facebook Open Source Projects")
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/FBC2W"><a href="//imgur.com/FBC2W"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 Thanks [Moyin](https://twitter.com/moyheen), for encouraging to share it.
 
