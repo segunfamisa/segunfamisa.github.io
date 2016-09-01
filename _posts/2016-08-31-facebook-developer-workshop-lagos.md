@@ -53,7 +53,7 @@ One of Facebook's products that helps reduce friction at login/registration poin
 It provides Facebook login, password-less login among others.
 2. [Bots & Messenger](https://developers.facebook.com/products/messenger/):
 a Facebook platform/product which businesses can use to reach out and engage their customers.
-3. [React Native](facebook.github.io/react-native): Tool to build declarative UIs and
+3. [React Native](https://facebook.github.io/react-native): Tool to build declarative UIs and
 native mobile apps in iOS and Android. Learn once, write anywhere.
 
 ### React native
