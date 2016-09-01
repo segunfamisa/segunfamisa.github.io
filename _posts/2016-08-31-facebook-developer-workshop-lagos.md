@@ -66,6 +66,11 @@ we needed to know to get started.
 <blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">React Native session with <a href="https://twitter.com/abernathyca">@abernathyca</a> <a href="https://t.co/8w7psxfoyt">pic.twitter.com/8w7psxfoyt</a></p>&mdash; SF (@segunfamisa) <a href="https://twitter.com/segunfamisa/status/770980900486217728">August 31, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+#### Resources and links
+  * React native codelab: [https://github.com/caabernathy/quizzer](https://github.com/caabernathy/quizzer)
+  * Facebook open source projects: [https://code.facebook.com/projects](https://code.facebook.com/projects)
+  * Facebook developers circle, Lagos: [https://www.facebook.com/groups/DevCLagos/](https://www.facebook.com/groups/DevCLagos/)
+
 ### Food
 The food was awesome. There was breakfast, coffee, tea, and lunch at the event.
 The Nigerian Jollof I had tasted better than it looked:
@@ -93,7 +98,6 @@ not so bad for a first attempt. 🙈
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/FBC2W"><a href="//imgur.com/FBC2W"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 Thanks [Moyin](https://twitter.com/moyheen), for encouraging to share it.
-
 
 # --
 I am really grateful that I was able to attend the workshop.
