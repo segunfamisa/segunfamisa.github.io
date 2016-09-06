@@ -107,7 +107,7 @@ Easy peasy!
 
 ### What to do for multiple modules?
 
-So, besides you app-module, let's say syou also have another `awesome-library` module you have written and is used in this project. This `awesome-library`, uses some dependencies also declared in your app-module.
+So, besides you app-module, let's say you also have another `awesome-library` module you have written and is used in this project. This `awesome-library`, uses some dependencies also declared in your app-module.
 
 How do we fix this? You might be tempted to have an `ext` block in both modules. That will work,
 but if you need to upgrade the support library version, you will need to modify the version, in both modules.
