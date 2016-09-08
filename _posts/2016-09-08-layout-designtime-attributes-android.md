@@ -75,7 +75,6 @@ You can use designtime attributes to preview what the list will look like if you
     />
 ```
 
-
 #### 2. RecyclerView
 Thanks to [Efe](https://twitter.com/efemoney_) for showing me this one.
 
@@ -91,8 +90,7 @@ Thanks to [Efe](https://twitter.com/efemoney_) for showing me this one.
 
 ### Points to note about designtime attributes
    * It works **ONLY** with Android framework attributes. That is, it doesn't work with custom attributes yet.
-   * You can use them together with regular layout android attributes.
-   For example
+   * You can use them together with regular layout android attributes. For example:
 
     ```XML
     <TextView
@@ -103,7 +101,7 @@ Thanks to [Efe](https://twitter.com/efemoney_) for showing me this one.
         tools:text="Test Test, add some really really really long text"
         />
     ```
-    
+
    * They only work within Android layout files. You can't use designtime attributes in menus, drawables, etc.
 
 ### References and further reading
