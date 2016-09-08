@@ -110,16 +110,16 @@ Taking a closer look at the square widget on the inspector pane. It contains som
 
 There are other modes of controlling the size of the view. Clicking on the inner lines in the image above help you cycle through the other modes.
 
-  * Fixed mode: ![alt text]( {{site.url}}/img/constraintlayout-inspector-fixed.png "Fixed mode") This allows you specify the width and height of the view.  
+  * Fixed mode: ![alt text]( {{site.baseurl}}/img/constraintlayout-inspector-fixed.png "Fixed mode") This allows you specify the width and height of the view.  
 
-  * Any size: ![alt text]( {{site.url}}/img/constraintlayout-inspector-any-size.png "Any size") This mode allows the image to fill up all the space required to fulfill that constraint. You can look at this like _"match constraint"_  
+  * Any size: ![alt text]( {{site.baseurl}}/img/constraintlayout-inspector-any-size.png "Any size") This mode allows the image to fill up all the space required to fulfill that constraint. You can look at this like _"match constraint"_  
 
-  * Wrap content: ![alt text]( {{site.url}}/img/constraintlayout-inspector-wrap-content.png "Wrap content") This just expands to fill the content of the view. E.g text or image
+  * Wrap content: ![alt text]( {{site.baseurl}}/img/constraintlayout-inspector-wrap-content.png "Wrap content") This just expands to fill the content of the view. E.g text or image
 
 
 ### Using Auto-connect to add constraints.
 Autoconnect as the name suggests, automatically creates connections between views/widgets. It tries to create connections to neighboring views/widgets.  
-To enable autoconnect, look out for the ![alt text]( {{site.url}}/img/constraintlayout-autoconnect.png "Autoconnect") icon on the top bar of the layout editor.
+To enable autoconnect, look out for the ![alt text]( {{site.baseurl}}/img/constraintlayout-autoconnect.png "Autoconnect") icon on the top bar of the layout editor.
 
 ## Last words
 This post is not exhaustive of the ways to create and use the `ConstraintLayout` but it's meant to just serve as a primer. I will be sharing how to use Inference to create constraints at a later date. I hope you check out the references and further reading for more.
