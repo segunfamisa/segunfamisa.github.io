@@ -92,15 +92,15 @@ Thanks to [Efe](https://twitter.com/efemoney_) for showing me this one.
    * It works **ONLY** with Android framework attributes. That is, it doesn't work with custom attributes yet.
    * You can use them together with regular layout android attributes. For example:
 
-    ```XML
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ...
-        android:text="@string/welcome_text"
-        tools:text="Test Test, add some really really really long text"
-        />
-    ```
+```XML
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    ...
+    android:text="@string/welcome_text"
+    tools:text="Test Test, add some really really really long text"
+    />
+```
 
    * They only work within Android layout files. You can't use designtime attributes in menus, drawables, etc.
 
