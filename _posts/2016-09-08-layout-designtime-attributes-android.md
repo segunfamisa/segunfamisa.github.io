@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android studio layout preview with tools attributes
+title: Android studio layout preview with tools designtime attributes
 date: 2016-09-08 21:42:45
 description: Android Studio tip on using designtime attributes to preview layout designs
 permalink: "/posts/android-studio-design-time-attributes"
