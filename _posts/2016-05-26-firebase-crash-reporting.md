@@ -15,6 +15,8 @@ published: true
 	<img src="/img/firebase-icon.png">
 </p>
 
+**Update:** (21st of September, 2016)  
+Since publication of this post, Firebase has changed and evolved, and this post has been updated to the new state of things.
 
 Last week, at [Google I/O](https://events.google.com/io2016/), Google announced a
 number of interesting new features in Firebase. The new Firebase is said to be a [_"Unified app platform for mobile developers"_](https://firebase.googleblog.com/2016/05/firebase-expands-to-become-unified-app-platform.html)
@@ -84,7 +86,7 @@ android {
 
 dependencies {
   // ...
-  compile 'com.google.firebase:firebase-core:9.0.0'
+  compile 'com.google.firebase:firebase-crash:9.4.0'
 }
 
 // ADD THIS AT THE BOTTOM
@@ -92,41 +94,50 @@ apply plugin: 'com.google.gms.google-services'
 ```
 
 
-### Setup crash reporting
-Now, to setup the crash reporting, you need to add the Firebase crash reporting dependency.
-Add this line to your module `build.gradle` file.
+### Reporting crashes
+Firebase Crash reporting automatically reports fatal errors (unhandled exceptions) once the dependency has been added and configured.
 
-```groovy
-compile 'com.google.firebase:firebase-crash:9.0.0'
-```
+It requires **NO** line of code.
 
-### Create your first crash report
-Now, that we've finished setting up, let's proceed to create our first crash report.
-Add the following lines to your activity:
+### Report non-fatal exceptions.
+Firebase allows you to manually report handled non-fatal (i.e exceptions that do not cause app crash).
+It's always good to report any errors that happen, whether or not they cause a crash
 
 ```java
 FirebaseCrash.report(new Exception("My first Firebase non-fatal error on Android"));
 ```
 
-After a few minutes (about 20 minutes according to the [Firebase docs](https://firebase.google.com/docs/crash/android#set_up_crash_reporting)), the crash will appear on the console dashboard looking like:
+After a few minutes (it now takes about 2 minutes), the crash will appear on the console dashboard looking like:
 
 <p align="center">
 	<img src="/img/firebase-crash-dashboard.png">
 </p>
 
+### Creating logs with Firebase
 There are other interesting things to do with Firebase crash reporting.
 
-You can create custom logs for events in the reports. Using a line like:
+You can create custom logs for events in the reports. Usually, when you get a crash in your app, the next thing you want to find out is, what the user was trying to do right?
+Well, creating logs make that easy to do. You can create a log using a line like:
 
 ```java
     FirebaseCrash.log("MainActivity started");
 ```
 
-If you're interested in making that log show on your logcat, use:
+You can also make that log show on your logcat, use:
 
 ```java
-    FirebaseCrash.logcat("MainActivity started");
+    FirebaseCrash.logcat(Log.DEBUG, "TAG", "MainActivity started");
 ```
+
+### Error Clusters
+One really cool thing about Firebase crash reporting is the _Cluster_ feature. Basically,
+firebase arranges errors in clusters of similar stack traces and by the severity of impact on your users.
+
+Essentially, it groups by whether or not they are "fatal" errors and whether or not they have similar stack traces. This makes easy overview and prioritising possible.
+
+### Proguard Mappings
+Firebase allows you upload your proguard mappings if you have used proguard to secure your app.
+This will enable Firebase handle the deobfuscation of crash reports, so that you can make sense out of it.
 
 ### Issues?
 Firebase crash reporting is still in Beta, so, there are definitely some issues for now,
@@ -140,23 +151,6 @@ crash reporting seems to be a separate process, as seen in the screenshot below:
 </p>
 
 This may lead to some concurrency issues, and It's filed under the known issues here [https://firebase.google.com/docs/crash/android#known-issues](https://firebase.google.com/docs/crash/android#known-issues)
-
-  * Unlike many other crash reporting platforms, that require you only to add one line of code,
-  Firebase crash doesn't seem to have that  "utility" setup method. Instead, to log all unhandled exceptions,
-  you probably want to add lines like:
-
-```java
-    Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
-        @Override
-        public void uncaughtException(Thread thread, Throwable ex) {
-            FirebaseCrash.report(ex);
-        }
-    });
-```
-
-### What's more?
-One really cool thing about Firebase crash reporting is the _Cluster_ feature. Basically,
-firebase arranges errors in clusters of similar stack traces and by the severity of impact on your users.
 
 ### Closing.
 In summary, I think the Firebase crash reporting is a pretty neat feature of the new Firebase product,
