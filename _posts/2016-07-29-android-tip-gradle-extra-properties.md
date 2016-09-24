@@ -4,7 +4,7 @@ title: Manage Android dependencies versions using gradle extra properties.
 date: 2016-07-29 09:05:30
 description: Android tip on how to use gradle extra properties to manage dependency versioning
 permalink: "/posts/android-gradle-extra-properties"
-tags: [android, tip, android studio, gradle, android]
+tags: [android, tip, android studio, gradle]
 excerpt: Android tip on how to use gradle extra properties to manage dependency versioning
 comments: true
 twitter_card_image: "/img/gradle-as.png"

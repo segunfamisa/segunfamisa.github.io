@@ -4,7 +4,7 @@ title: Android studio layout preview with tools designtime attributes
 date: 2016-09-08 21:42:45
 description: Android Studio tip on using designtime attributes to preview layout designs
 permalink: "/posts/android-studio-design-time-attributes"
-tags: [android, tip, android studio, android]
+tags: [android, tip, android studio]
 excerpt: Android Studio tip on using designtime attributes to preview layout designs
 comments: true
 twitter_card_image: "/img/android-studio-icon.png"
