@@ -115,6 +115,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 
 ```
 
+
 ##### d. Build your notification
 Next is to build notification and create it. Doing this makes use of the  reply action we built in step b above.
 Sample code to implement this is:
@@ -166,6 +167,26 @@ public void onReceive(Context context, Intent intent) {
     }
 }
 ```
+
+**Update**
+
+NB: If you happen to be using a broadcast receiver, ensure that your BroadcastReceiver isn't exported.
+The reason for this is, if your component (say BroadcastReceiver) is accessible from a 3rd party app,
+the app could create fake RemoteInput results and create PendingIntents **without** any user interaction. This could lead to major security issues.
+
+If you're using a BroadcastReceiver, one way to make sure it's only accessible within your app, is to set
+`exportable` to `false`
+
+Your BroadcastReceiver will look like this in your AndoridManifest.xml file:
+
+```xml
+<receiver
+    android:name=".NotificationBroadcastReceiver"
+    android:enabled="true"
+    android:exported="false" />
+```
+
+Thanks [Cketti](https://twitter.com/cketti) for suggesting the update
 
 ## 3. Update your notification.
 You don't want your remote input to keep spinning forever, so you should update the notification.
