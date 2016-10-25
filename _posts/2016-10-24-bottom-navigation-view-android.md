@@ -7,8 +7,8 @@ permalink: "/posts/bottom-navigation-view-android"
 tags: [android, android studio, tutorial, material design, support library]
 excerpt: Tutorial on how to implement the new bottom navigation view with the support library
 comments: true
-twitter_card_image: "/img/android-nougat-banner.png"
-header_image: /img/android-nougat-banner.png
+twitter_small_card_image: /img/android.jpg
+header_image: /img/android.jpg
 ---
 
 Sometimes in March 2016, [Luke Wroblewski announced](https://twitter.com/lukew/status/709580252830273537) that the

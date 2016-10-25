@@ -21,11 +21,15 @@ layout: default
         <meta name="twitter:description" content="{{ page.excerpt }}" >
      {% endif %}
 
-     <!--  twitter image -->
+     <!--  twitter large image -->
      {% if page.twitter_card_image %}
         <meta name="twitter:image" content="{{ site.url }}{{ page.twitter_card_image }}" >
         <meta name="twitter:card" content="summary_large_image" >
-     {% else %}
+     {% endif %}
+
+     <!--  small twitter image -->
+     {% if page.twitter_small_card_image %}
+        <meta name="twitter:image" content="{{ site.url }}{{ page.twitter_small_card_image }}" >
         <meta name="twitter:card" content="summary">
      {% endif %}
 
