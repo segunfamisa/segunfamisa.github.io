@@ -56,9 +56,10 @@ Next step, is to add the actual bottom nav view to the layout. Typically, you wi
 The BottomNavigationView uses `design:menu` is a custom attribute that points to the menu resource containing items to be shown on the BottomNavigationView.
 
 There are other custom attributes for the view, including:
-  * `design:itemBackground` to set the background of the menu resource
-  * `design:itemIconTint` to set the tint which is applied to the item icons.
-  * `design:itemTextColor` to set the menu item text colour.
+
+  * `design:itemBackground` to set the background of the menu resource  
+  * `design:itemIconTint` to set the tint which is applied to the item icons.  
+  * `design:itemTextColor` to set the menu item text colour.  
 
 ## 3. Define the nav items in the menu resource	 
 The BottomNavigationView is used in a very similar way to the [NavigationView](https://developer.android.com/reference/android/support/design/widget/NavigationView.html) because the bottom nav view also uses menu resources to populate items.
@@ -93,7 +94,7 @@ We can run the app now, and we'll see our neatly implemented bottom nav view.
 ## Listening for events on the bottom nav view
 Now that we've added the view, we'd love to know when a menu item is clicked right?
 
-To listen for click events on the BottomNavigationView, we just need to call [setOnNavigationItemSelectedListener()](https://developer.android.com/reference/android/support/design/widget/BottomNavigationView.html#setOnNavigationItemSelectedListener(android.support.design.widget.BottomNavigationView.OnNavigationItemSelectedListener) .
+To listen for click events on the BottomNavigationView, we just need to call setOnNavigationItemSelectedListener()
 
 Example of how to do this is:
 
