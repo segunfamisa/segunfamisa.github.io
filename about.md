@@ -14,21 +14,19 @@ Hi, I am Segun Famisa. I am a Software Engineer.
 
 I program in java, python, c#, matlab, LabVIEW.
 
-Formerly an Android Developer at [Truppr][truppr], now I'm building [KongaPay](https://kongapay.com)
+I'm currently a Senior Technical Consultant at [Andela](https://andela.com).
+Prevoiusly, I worked as a Software Engineer, working on Android at [Truppr][truppr] and [KongaPay](https://kongapay.com)
 
 I'm interested in `Android`, `public speaking`, `research`, `artificial intelligence`, `computing` `robotics`, `IoT`
 
 I am a Karateka. :D
 
-I just recently became a MVB at [Dzone](https://dzone.com/users/2842273/segunfamisa.html)
+I'm also an MVB at [Dzone](https://dzone.com/users/2842273/segunfamisa.html)
 
 ### Contact me
 
-Interested in connecting? Drop an email at segunfamisa at gmail dot com or find
-me on
----
+Interested in connecting? Drop an email at segunfamisa at gmail dot com or send me a [Tweet](https://twitter.com/segunfamisa).
 
-[![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/segunfamisa?utm_source=github&utm_medium=button&utm_term=segunfamisa&utm_campaign=github)
-
+Cheers 🎉
 
 [truppr]:https://truppr.com
