@@ -10,14 +10,15 @@ image:
 
 ---
 
-Hi, I am Segun Famisa. I am a Software Engineer.
+Hi, I am Segun Famisa. I am an Android developer.
 
-I program in java, python, c#, matlab, LabVIEW.
+I program in kotlin, java and sometimes, python.
 
-I'm currently a Senior Technical Consultant at [Andela](https://andela.com).
-Prevoiusly, I worked as a Software Engineer, working on Android at [Truppr][truppr] and [KongaPay](https://kongapay.com)
+I'm currently a Software Engineer at [trivago](https://trivago.com).
 
-I'm interested in `Android`, `public speaking`, `research`, `artificial intelligence`, `computing` `robotics`, `IoT`
+Previously I worked as a Consultant at [Andela](https://andela.com). I also worked on Android at [Truppr][truppr] and [KongaPay](https://kongapay.com)
+
+I'm interested in `Android`, `public speaking`, `Software Engineering`, `research`, `artificial intelligence`, `computing` `robotics`, `IoT`
 
 I am a Karateka. :D
 
