@@ -102,6 +102,7 @@ if (channelIsBlocked) {
 	// you should also provide a way to make them go to the channel settings
 }
 ```
+The code block above shows how we can check for the importance setting for the channel, we can do similar for lights, vibration, and other settings
 
 ### Deleting notification channels
 So, assuming that a user has unsubscribed from a previous conversation that a channel was created for, and you have to delete the channel. Deleting is quite straightforward, to do this, one needs to do something like:
