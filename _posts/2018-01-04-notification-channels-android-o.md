@@ -28,7 +28,7 @@ In Android O, notification channels are somewhat like groups or categories of no
 <!-- Insert notification settings screenshot here -->
 <p align="center">
 	<img src="/img/notification-channels-android-o.png"
-  alt="Android Studio showing app:fontFamily as error">
+  alt="Notification Settings screenshot showing different notification categories">
 </p>
 
 
