@@ -93,7 +93,7 @@ It's important not to make this intrusive in anyway or obstructing them from goi
 To read the notification channel details, you need to get a reference to the notification channel, and query the settings you desire.
 
 ```kotlin
-val pmNotificationChannel = notificationManager.getNotificationChannel(GROUP_CHAT_CHANNEL_ID)
+val pmNotificationChannel = notificationManager.getNotificationChannel(PRIVATE_MESSAGES_CHANNEL_ID)
 
 val channelIsBlocked = pmNotificationChannel.importance == NotificationManager.IMPORTANCE_NONE
 
