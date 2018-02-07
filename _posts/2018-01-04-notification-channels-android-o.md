@@ -104,6 +104,15 @@ if (channelIsBlocked) {
 ```
 The code block above shows how we can check for the importance setting for the channel, we can do similar for lights, vibration, and other settings
 
+To provide a well rounded experience, it is advisable to help users access the notification settings where they can update their notifications. You can place this somewhere in your settings menu. There is an
+intent available for the notification settings, and constructing code looks like:
+
+```kotlin
+val notificationSettingsIntent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+notificationSettingsIntent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+startActivity(notificationSettingsIntent)
+```
+
 ### Deleting notification channels
 So let's assume that a user has unsubscribed from a previous conversation that a channel was created for. You will have to delete the channel. Deleting is quite straightforward. To do this, one needs to do something like:
 
@@ -111,10 +120,21 @@ So let's assume that a user has unsubscribed from a previous conversation that a
 notificationManager.deleteNotificationChannel(PRIVATE_MESSAGES_CHANNEL_ID)
 ```
 
+Extra
+-----
+
+There are some additional thoughts & questions that come up regarding notification channels. Questions like - 
+
+* When is the best time to set up notification channels? On app start? When the user profile is ready? Just before showing the notification? Dan Lew has some thoughts about this: [http://blog.danlew.net/2017/09/06/working-with-android-notification-channels/](http://blog.danlew.net/2017/09/06/working-with-android-notification-channels/)
+* What if I really really need to show the notification to the user? - We have this covered in this post. Final decision about notification settings is up to the user, once the channels have been created and a notification posted to the channel. If the user modifies the setting to one that doesn't make them fully enjoy the app, you can unobtrusively make them aware of this - using a dismissable card or something of that nature. I personally won't advice using an alert or complete breakdown of the app.
+* What about pre-O devices? If you support devices below API level 26, you will probably get a lot of lint warnings as you implement this. NotificationManagerCompat doesn't (yet) contain methods to create, update & delete the channels. This suggests that you may need to have a [`NotificationManager`](https://developer.android.com/reference/android/app/NotificationManager.html) to handle these things for API level 26+, and [`NotificationManagerCompat`](https://developer.android.com/reference/android/support/v4/app/NotificationManagerCompat.html) for older APIs (depending on how far back your minSdk is).
+Also, related to this, the [`NotificationCompat.Builder`](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html#NotificationCompat.Builder(android.content.Context, java.lang.String)) already adds support for setting channel ids to which notifications will be posted.
+
 ### Further reading
-Here are some materials that may come in handy for further reading of notification channels:
+Here are some resources that may come in handy for further reading on notification channels:
 * [https://developer.android.com/guide/topics/ui/notifiers/notifications.html#ManageChannels](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#ManageChannels)
 * [https://codelabs.developers.google.com/codelabs/notification-channels-kotlin/#0](https://codelabs.developers.google.com/codelabs/notification-channels-kotlin/#0)
+* [http://blog.danlew.net/2017/09/06/working-with-android-notification-channels/](http://blog.danlew.net/2017/09/06/working-with-android-notification-channels/)
 
 Summary
 -----
@@ -124,6 +144,8 @@ In conclusion, the new notification channels in Android provide an improved expe
 Finally, remember that come August 2018 for new apps and November for app updates, you will be required to target Android O (API level 26) or higher. And as a result, this will require you to implement notification channels if you show notifications in your app.
 
 If you want to see some more code, I have a demo project with some of these implementations available on Github, check it out here: [https://github.com/segunfamisa/android-notification-channels-demo](https://github.com/segunfamisa/android-notification-channels-demo) 
+
+Thanks to [Moyin](https://medium.com/@moyinoluwa) for helping to review the post.
 
 Thanks for reading this post. Please feel free to give feedback, suggestions, corrections etc. Also, if you found the post useful, please share and/or leave a comment.
 
