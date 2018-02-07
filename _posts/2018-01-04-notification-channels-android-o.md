@@ -123,7 +123,7 @@ notificationManager.deleteNotificationChannel(PRIVATE_MESSAGES_CHANNEL_ID)
 Extra
 -----
 
-There are some additional thoughts & questions that come up regarding notification channels. Questions like - 
+There are some additional thoughts & questions that come up regarding notification channels. Some of them include - 
 
 * When is the best time to set up notification channels? On app start? When the user profile is ready? Just before showing the notification? Dan Lew has some thoughts about this: [http://blog.danlew.net/2017/09/06/working-with-android-notification-channels/](http://blog.danlew.net/2017/09/06/working-with-android-notification-channels/)
 * What if I really really need to show the notification to the user? - We have this covered in this post. Final decision about notification settings is up to the user, once the channels have been created and a notification posted to the channel. If the user modifies the setting to one that doesn't make them fully enjoy the app, you can unobtrusively make them aware of this - using a dismissable card or something of that nature. I personally won't advice using an alert or complete breakdown of the app.
