@@ -9,11 +9,11 @@ tags: [android oreo, tutorial, notification channels, notification categories]
 ---
 
 
-In (not-so) recent news, Google is going to be enforcing that apps are targetted for SDK 26 (Android Oreo) by late 2018, in order to ensure security and improved performance in apps. You can read more about the announcement [here](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+In (not-so) recent news, Google is going to enforce that all apps target SDK 26 (Android Oreo) by late 2018, in order to ensure security and improved performance in apps. You can read more about the announcement [here](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 Now, it's pretty easy to target API 26, but there's no gurantee that your app will function as it used to by just changing the `targetSdkVersion` value in your `build.gradle` file.
 
-This post looks specifically at one of the new things introduced in Android Oreo, and how targetting API 26 will affect your app, and notifications - notification channels (or categories).
+This post looks specifically at one of the new things introduced in Android Oreo, and how targeting API 26 will affect your app, and notifications - notification channels (or categories).
 
 TL;DR
 -----
@@ -23,7 +23,7 @@ Your app will stop sending notifications to the users if you target API 26 and y
 What are Notification Channels?
 -----
 
-In Android O, notification channels are somewhat like groups or categories of notifications - say you're building a social networking app, the channels can be "activity" - like likes, or comments on your posts, "messages", etc. In fact, in the settings of your app, the user sees channels as "categories" as seen in the screenshot below.
+In Android O, notification channels are somewhat like groups or categories of notifications - say you're building a social networking app, the channels can be "activity" - likes, or comments on your posts, "messages", etc. In fact, in the settings of your app, the user sees channels as "categories" as seen in the screenshot below.
 
 <!-- Insert notification settings screenshot here -->
 <p align="center">
@@ -33,7 +33,7 @@ In Android O, notification channels are somewhat like groups or categories of no
 
 
 
-With the introduction of notification channels, users can get a fine control of what they want to be notified about - they can specifically turn off notifications for a certain channel, specify the importance as well as the preferred sound for a particular category of notifications, whether or not to override DND (Do not disturb)
+With the introduction of notification channels, users can get a fine control of what they want to be notified about. They can specifically turn off notifications for a certain channel, specify the importance as well as the preferred sound for a particular category of notifications and determine whether or not to override DND (Do not disturb)
 
 Implementing Notification Channels
 -----
@@ -52,9 +52,9 @@ val privateMessagesChannel = NotificationChannel(
 
 notificationManager.createNotificationChannel(privateMessagesChannel)
 ```
-It's worthy of note that you can also create channel groups, and this is useful in scenarious where you have multiple accounts or profiles, so you can group the notification channels per account/profile.
+It's worthy of note that you can also create channel groups. This is useful in scenarios where you have multiple accounts or profiles so you can group the notification channels per account/profile.
 
-You can specify further customizations for the channel you have created. For example, you can specify the light colors, vibration pattern etc for the channel as shown below:
+You can specify further customizations for the channel you have created. For example, you can specify the light colors, vibration pattern etc. for the channel as shown below:
 
 ```kotlin
 with(privateMessagesChannel) {
@@ -85,10 +85,10 @@ The part of the code above that sets the channel is `.setChannelId()`. Without t
 
 ### Updating/reading notification channels settings
 
-After creating notification channels, the ability to control is left to the user. They can turn off notifications, change priority, lights & vibration settings etc for any channel they desire. However, it is possible to programmatically read the current channel settings. You may need this, so that you can present the status of the notification channel to your user - for example, if the user has turned off notification for a certain group
+After creating notification channels, the ability to control is left to the user. They can turn off notifications, change priority, lights and vibration settings etc. for any channel they desire. However, it is possible to programmatically read the current channel settings. You may need this, so that you can present the status of the notification channel to your user. For example, if the user has turned off notifications for a certain group
 chat, you may display a "mute" icon next to the group details or somewhere it's visible to the user. 
 
-It's important not to make this intrusive in anyway or obstructing them from going about their normal activities in the app because it defeats the purpose of giving users the power to control the settings for the channel.
+It's important not to make this intrusive in anyway or obstruct users from going about their normal activities in the app because it defeats the purpose of giving users the power to control the settings for the channel.
 
 To read the notification channel details, you need to get a reference to the notification channel, and query the settings you desire.
 
@@ -105,7 +105,7 @@ if (channelIsBlocked) {
 The code block above shows how we can check for the importance setting for the channel, we can do similar for lights, vibration, and other settings
 
 ### Deleting notification channels
-So, assuming that a user has unsubscribed from a previous conversation that a channel was created for, and you have to delete the channel. Deleting is quite straightforward, to do this, one needs to do something like:
+So let's assume that a user has unsubscribed from a previous conversation that a channel was created for. You will have to delete the channel. Deleting is quite straightforward. To do this, one needs to do something like:
 
 ```kotlin
 notificationManager.deleteNotificationChannel(PRIVATE_MESSAGES_CHANNEL_ID)
@@ -119,11 +119,11 @@ Here are some materials that may come in handy for further reading of notificati
 Summary
 -----
 
-In conclusion, the new notification channels in Android provide an improved experience for users - in terms of gaining more control over notifications, and this also helps us developers to be more decent in their use of notifications, and at the end of the day, it's a win-win situation.
+In conclusion, the new notification channels in Android provide an improved experience for users - in terms of gaining more control over notifications, and this also helps us developers to be more decent in our use of notifications. At the end of the day, it's a win-win situation.
 
-Finally, remember that come August, 2018, new apps and app updates will require you to target Android O (API level 26) or higher, and as a result will require you to implement notification channels if you show notifications in your app.
+Finally, remember that come August 2018 for new apps and November for app updates, you will be required to target Android O (API level 26) or higher. And as a result, this will require you to implement notification channels if you show notifications in your app.
 
-If you want to see some more code, I have a demo project with some of these implementations available on Github, check it out here: 
+If you want to see some more code, I have a demo project with some of these implementations available on Github, check it out here: [https://github.com/segunfamisa/android-notification-channels-demo](https://github.com/segunfamisa/android-notification-channels-demo) 
 
 Thanks for reading this post. Please feel free to give feedback, suggestions, corrections etc. Also, if you found the post useful, please share and/or leave a comment.
 
