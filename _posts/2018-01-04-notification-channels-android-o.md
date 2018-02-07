@@ -5,6 +5,8 @@ date:   2018-02-06 20:20:02
 description: Prepare your app for Android Oreo targets by implementing notification channels
 excerpt: "Prepare your app for Android Oreo targets by implementing notification channels"
 permalink: /posts/notification-channels-android-o
+comments: true
+twitter_small_card_image: /img/android.jpg
 tags: [android oreo, tutorial, notification channels, notification categories]
 ---
 
