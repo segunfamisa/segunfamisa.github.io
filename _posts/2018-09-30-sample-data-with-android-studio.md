@@ -82,9 +82,10 @@ Let's take a look at an example of how to use framework provided sample data.
 
 In the layout preview, we see something like we have in the screen shot below:
 
-[insert screenshot]
+![Result of the code block above - showing sample data in the preview window](https://i.imgur.com/vkbsg5p.png)
 
-The line that does the magic for the avatar is `tools:src=``"``@tools:sample/avatars``"`. And for the full name - `tools:text=``"``@tools:sample/full_names`. We set the `src` and `text` attributes, but only for the preview, hence, the `tools:` namespace being used.
+
+The line that does the magic for the avatar is `tools:src="@tools:sample/avatars"`. And for the full name - `tools:text="@tools:sample/full_names"`. We set the `src` and `text` attributes, but only for the preview, hence, the `tools:` namespace being used.
 
 The values, `@tools:sample/avatars` and `@tools:sample/full_names` are only some of the many types of sample data provided by the Android Studio.
 
