@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using sample data resources in Android Studio"
-date:   2018-09-30 09:00:00
+date:   2018-10-01 09:00:00
 description: Use sample data resources for easy layout preview in Android Studio
 excerpt: "Use sample data resources for easy layout preview in Android Studio"
 permalink: /posts/sample-data-with-android-studio
