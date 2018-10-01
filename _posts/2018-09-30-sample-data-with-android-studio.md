@@ -26,11 +26,12 @@ You can use the tools namespace in most (if not all) places you can use the Andr
 
 If these view attributes (for example, `textColor`) are supported by the preview, you will be able to see your views with the attributes specified in the preview section of your layout editor. The code below shows the text colour as red in the layout preview.
 
-
-    <TextView
-        ...
-        android:text="Hello World!"
-        tools:textColor="#FF0000" />
+```XML
+<TextView
+    ...
+    android:text="Hello World!"
+    tools:textColor="#FF0000" />
+```
 
 The system only shows these values in the layout editor while designing, but ignores all view attributes that carry the tools namespace, which makes it really handy. It is also why they are also known as design time attributes.
 
@@ -95,7 +96,7 @@ Besides using the framework provided data, it is also possible to create custom 
 It is also possible to create this using android studio by right clicking on the module and navigating to  `New > Sample Data Directory` as shown in the screenshot below
 
 <p align="center">
-	<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_766C0ED8EA1435ADAE6F674EEFDB4C82E0D53C3364D6DC88334277BD80519946_1538302403941_image.png"
+	<img src="https://i.imgur.com/wHZZTwa.png"
   alt="Creating Sample Data directory using Android Studio UI">
 </p>
 
@@ -169,14 +170,17 @@ In the design view of Android Studio layout editor, it is possible to type in va
 
 An example is the `text` attribute on TextViews, shown below:
 
-
-![Screenshot showing the text attribute](https://d2mxuefqeaa7sj.cloudfront.net/s_766C0ED8EA1435ADAE6F674EEFDB4C82E0D53C3364D6DC88334277BD80519946_1538304759218_image.png)
-
+<p align="center">
+	<img src="https://i.imgur.com/Pk2OPw9.png"
+  alt="Screenshot showing the text attribute">
+</p>
 
 Clicking the button next to the field for text preview attribute, Android Studio pops out a dialog where we see all available sample data - both framework provided and custom sample data as seen in the screenshot below:
 
-![Dialog for selecting sample data (custom sample data are highlighted in colour green)](https://d2mxuefqeaa7sj.cloudfront.net/s_766C0ED8EA1435ADAE6F674EEFDB4C82E0D53C3364D6DC88334277BD80519946_1538304967132_image.png)
-
+<p align="center">
+	<img src="https://i.imgur.com/bZhyc4y.png"
+  alt="Dialog for selecting sample data (custom sample data are highlighted in colour green">
+</p>
 
 # Conclusion
 
