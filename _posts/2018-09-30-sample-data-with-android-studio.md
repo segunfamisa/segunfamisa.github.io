@@ -104,17 +104,17 @@ It’s important to know how to structure the sample data file. The structure wi
 
 A typical sample data file looks like this:
 
-
+```json
+{
+  "comment": "Sample data structure",
+  "data": [
     {
-      "comment": "Sample data structure",
-      "data": [
-        {/* sample data as a key-value pair */},
-        {
-          "name": "Segun",
-          "age": "25",
-        }
-      ]
+      "name": "Segun",
+      "age": "25",
     }
+  ]
+}
+```
 
 
 - The first thing to notice is the `comment`  JSON key. I believe it is primarily for documentation.
@@ -122,6 +122,7 @@ A typical sample data file looks like this:
   One can use any key for the JSON array. In the example above, the key for the JSON array is called `data` but you could name it `emails`,  `colors`, `users` or whatever it is your data represents.
   The values for this are JSON objects with the attributes you would like. For example, if our data represented phone contacts, we would have
 
+    ```json
     {
       "comment": "...",
       "data": [
@@ -131,6 +132,7 @@ A typical sample data file looks like this:
         }
       ]
     }
+    ```
 
 The next important thing is to know the *syntax* for accessing these custom data.
 
@@ -142,22 +144,23 @@ The general structure is:
 It’s worthy of note that it is possible to have JSON Arrays within the attributes depending on how your data hierarchy looks.
 Let’s say for instance, we want to define sample data for names, but we want long and short names, just to see how the layout will look when we have long names. Our sample data file could look like this:
 
-
+```json
+{
+  "comment": "Names data - names.json",
+  "names": [
     {
-      "comment": "Names data - names.json",
-      "names": [
-        {
-          "short_names": [
-            { "name": "Amy" },
-            { "name": "Joe" }
-          ],
-          "long_names": [
-            { "name": "Oluwasegun" },
-            { "name": "Constantine" }
-          ]
-        }
+      "short_names": [
+        { "name": "Amy" },
+        { "name": "Joe" }
+      ],
+      "long_names": [
+        { "name": "Oluwasegun" },
+        { "name": "Constantine" }
       ]
     }
+  ]
+}
+```
 
 If we want to access `long_names` we would do so as - `@sample/names.json/names/long_names/name`
 
