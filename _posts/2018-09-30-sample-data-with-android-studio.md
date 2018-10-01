@@ -40,12 +40,13 @@ If you want to see more about tools/design time attributes, check out this post 
 
 # Sample data
 
-One can typically use sample data in two ways, either by using the sample data provided by the Android framework, or creating custom sample data to fit your requirements.
+One can typically use sample data in two ways. Either by using the sample data provided by the Android framework, or creating custom sample data to fit your requirements.
 
 
 ## 1. Framework provided sample data
 
-For most types of data, the framework provides sample data that we can use. This ranges from dates, to phone numbers, first names, last names, lorem ipsum text and many more. There is a more exhaustive list here: [https://developer.android.com/studio/write/tool-attributes#toolssample_resources](https://developer.android.com/studio/write/tool-attributes#toolssample_resources)
+For most types of data, the framework provides sample data that we can use. This ranges from dates, to phone numbers, first names, last names, lorem ipsum text and many more. There is a more exhaustive list here: [https://developer.android.com/studio/write/tool-attributes#toolssample_resources](https://developer.android.com/studio/write/tool-attributes#toolssample_resources).
+
 Let's take a look at an example of how to use framework provided sample data.
 
 ```XML
@@ -87,7 +88,7 @@ In the layout preview, we see something like we have in the screen shot below:
 
 The line that does the magic for the avatar is `tools:src="@tools:sample/avatars"`. And for the full name - `tools:text="@tools:sample/full_names"`. We set the `src` and `text` attributes, but only for the preview, hence, the `tools:` namespace being used.
 
-The values, `@tools:sample/avatars` and `@tools:sample/full_names` are only some of the many types of sample data provided by the Android Studio.
+The values `@tools:sample/avatars` and `@tools:sample/full_names` are only some of the many types of sample data provided by the Android Studio. See [here](https://developer.android.com/studio/write/tool-attributes#toolssample_resources) for more.
 
 
 ## 2. Custom sample data
@@ -121,7 +122,7 @@ A typical sample data file looks like this:
 - The first thing to notice is the `comment`  JSON key. I believe it is primarily for documentation.
 - Then the next attribute is a list of items/data you wish to provide.
   One can use any key for the JSON array. In the example above, the key for the JSON array is called `data` but you could name it `emails`,  `colors`, `users` or whatever it is your data represents.
-  The values for this are JSON objects with the attributes you would like. For example, if our data represented phone contacts, we would have
+  The value for this is an array of JSON objects with the attributes you would like. For example, if our data represented phone contacts, we would have something like:
 
     ```json
     {
@@ -163,14 +164,14 @@ Let’s say for instance, we want to define sample data for names, but we want l
 }
 ```
 
-If we want to access `long_names` we would do so as - `@sample/names.json/names/long_names/name`
+If we want to access `long_names` we can do so as - `@sample/names.json/names/long_names/name`
 
 
 # Using Sample Data from the new Android Studio
 
 Android Studio 3.2 now makes it a lot easier to use sample data. We can now see the available sample data and select them from the design view of Android Studio layout editor.
 
-In the design view of Android Studio layout editor, it is possible to type in values for previewing. In the attributes window (typically on the extreme right hand side of the design window), there is a brush icon next to attributes that we can have design time attributes for.
+In the attributes window of the layout editor (typically on the extreme right hand side of the design view), there is a brush icon next to attributes that we can have design time attributes for.
 
 An example is the `text` attribute on TextViews, shown below:
 
