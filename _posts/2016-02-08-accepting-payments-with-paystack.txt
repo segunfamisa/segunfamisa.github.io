@@ -1,14 +1,4 @@
----
-layout: post
-title: "Accepting Payments on Android with Paystack"
-date: 2016-02-09 05:05:30
-description: How to accept and process payments on Android using Paystack
-permalink: /posts/accepting-payments-android-with-paystack
-tags: [android, payments, paystack, tutorial]
-excerpt: "Brief tutorial on how to setup and use Paystack on Android "
-twitter_card_image: /img/paystack-logo.png
-comments: true
----
+
 <p align="center">
 	<img src="/img/paystack-logo.png">
 </p>
