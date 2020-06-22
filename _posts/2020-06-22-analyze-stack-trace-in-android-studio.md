@@ -45,7 +45,7 @@ When you receive a stack trace, you can import them into Android Studio and intr
 all the nice formatting, hyperlink and navigating functionality that we get as if it's a
 crash from the logcat.
 
-The Android Developer blog pretty much explains
+The Android Developer docs page pretty much explains
 [how to use this tool](https://developer.android.com/studio/debug/stacktraces),
 but I'll summarize the steps here:
 
