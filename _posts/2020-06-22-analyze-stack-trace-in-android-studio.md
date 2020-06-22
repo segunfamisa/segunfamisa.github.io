@@ -58,7 +58,7 @@ On clicking "OK", a tab is opened in the "Run" window of the screen, and there,
 you have the well formatted, hyperlinked stack trace, ready to be navigated by clicking through.
 
 It's really interesting to note that once you have the stack trace in your clipboard,
-the tool automatically pre-fills field and saves you the stress of having to paste it manually.
+the tool automatically pre-fills the field and saves you the stress of having to paste it manually.
 Pretty cool.
 
 # Analyzing obfuscated stack trace
@@ -76,7 +76,8 @@ In such cases, you need to install a Proguard unscrambler in Android Studio.
 I found that there are some unscramblers available in the IntelliJ plugin marketplace.
 I personally found [this one](https://plugins.jetbrains.com/plugin/11971-proguard-unscramble) useful.
 _(Disclaimer: I'm not in any way related to the project or the author, and while I can't vouch
-for the security or safety of the plugin, it worked for me and the source is available [here](https://github.com/Chimerapps/intellij-proguard-unscramble))._
+for the security or safety of the plugin, it worked for me and the source is available [here](https://github.com/Chimerapps/intellij-proguard-unscramble))._ You can check out this resource here for how to install a plugin:
+[https://www.jetbrains.com/help/idea/managing-plugins.html](https://www.jetbrains.com/help/idea/managing-plugins.html)
 
 If you have no unscrambler, the checkbox to unscramble stack traces in the `Analyze Stack Trace`
 window is disabled. If you have an unscrambler installed, it appears as in the image below, and you
@@ -88,7 +89,7 @@ are able to check the box and fill in the details.
 </p>
 
 When you click "OK", the unscrambler kicks into action, and you have your de-obfuscated stack trace
-in the <Stack
+in the <Stacktrace> tab of the "Run" window.
 
 # Extras
 * Even though the article says Proguard, it seems to work as well for code obfuscated & packaged by R8/D8
@@ -112,3 +113,8 @@ If you have ideas, correction or feedback about this post,
 feel free to drop them in the comments.
 
 Cheers.
+
+# Resources
+* [https://www.jetbrains.com/help/idea/managing-plugins.html](https://www.jetbrains.com/help/idea/managing-plugins.html)
+* [Code shrinking and obfuscation](https://developer.android.com/studio/build/shrink-code)
+* [Analyze Stack Trace in Android Developer Docs](https://developer.android.com/studio/debug/stacktraces)
