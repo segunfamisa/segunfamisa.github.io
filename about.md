@@ -14,7 +14,7 @@ Hi, I am Segun Famisa. I am an Android developer.
 
 I program in kotlin, java and sometimes, python.
 
-I'm currently a Software Engineer at [trivago](https://trivago.com).
+I'm currently a Software Engineer at [SoundCloud](https://soundcloud.com).
 
 Previously I worked as a Consultant at [Andela](https://andela.com). I also worked on Android at [Truppr][truppr] and [KongaPay](https://kongapay.com)
 
