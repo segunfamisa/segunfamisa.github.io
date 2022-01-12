@@ -6,8 +6,8 @@ description: Use sample data resources for easy layout preview in Android Studio
 excerpt: "Use sample data resources for easy layout preview in Android Studio"
 permalink: /posts/sample-data-with-android-studio
 comments: true
-twitter_small_card_image: /img/android-studio-icon.png
-header_image: /img/android-studio-icon.png
+twitter_small_card_image: /images/android-studio-icon.png
+header_image: /images/android-studio-icon.png
 tags: [android studio, tutorial, tips, layout preview]
 ---
 

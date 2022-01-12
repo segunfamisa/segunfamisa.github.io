@@ -7,8 +7,8 @@ permalink: "/posts/android-studio-design-time-attributes"
 tags: [android, tip, android studio]
 excerpt: Android Studio tip on using designtime attributes to preview layout designs
 comments: true
-twitter_card_image: "/img/android-studio-icon.png"
-header_image: /img/android-studio-icon.png
+twitter_card_image: "/images/android-studio-icon.png"
+header_image: /images/android-studio-icon.png
 ---
 
 This is a short tip for Android Studio users. Many people know this, but I thought to still

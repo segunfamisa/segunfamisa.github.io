@@ -6,8 +6,8 @@ description: Android debugging tip - attach Android Studio debugger at app start
 excerpt: "Android debugging tip - attach Android Studio debugger at app start up"
 permalink: /posts/android-debugging-set-debug-app
 comments: true
-twitter_small_card_image: /img/android-studio-icon.png
-header_image: /img/android-studio-icon.png
+twitter_small_card_image: /images/android-studio-icon.png
+header_image: /images/android-studio-icon.png
 tags: [android studio, tips, debuggger, adb]
 ---
 
@@ -27,7 +27,7 @@ you see a dialog with "Waiting for Debugger" as its title. An example of the dia
 is as shown in the screenshot below.
 
 <p align="center">
-	<img src="/img/waiting-for-debugger.png"
+	<img src="/images/waiting-for-debugger.png"
   alt="Screenshot showing the Android system waiting for debugger when debug app is launched">
 </p>
 
@@ -48,7 +48,7 @@ where the debugged application waits for the debugger to attach before launching
 The screenshots below show the step 2-4:
 
 <p align="center">
-	<img src="/img/set-debug-app-2-4.png"
+	<img src="/images/set-debug-app-2-4.png"
   alt="Screenshots of steps 2 - 4">
 </p>
 

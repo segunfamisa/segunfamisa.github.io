@@ -1,89 +1,111 @@
 ---
 layout: default
 ---
-<div class="post">
 
-     <!--  twitter card meta data -->
-     <!--  page title -->
-     {% if page.title %}
-        <meta name="twitter:title" content="{{ page.title }}" >
-     {% else %}
-        <meta name="twitter:title" content="{{ site.title }}" >
-     {% endif %}
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="post__info">
 
-     <!--  twitter site -->
-     {% if site.owner.twitter %}
-        <meta name="twitter:site" content="@{{ site.owner.twitter }}">
-     {% endif %}
+        {% if page.tags.size >= 1 %}
+          <div class="post__tags">
+            {% for tag in page.tags %}
+              <a href="{{ site.baseurl }}/tags#{{ tag }}" class="post__tag">{{ tag }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
 
-     <!--  description -->
-     {% if page.excerpt %}
-        <meta name="twitter:description" content="{{ page.excerpt }}" >
-     {% endif %}
+        <h1 class="post__title">{{ page.title | escape }}</h1>
 
-     <!--  twitter large image -->
-     {% if page.twitter_card_image %}
-        <meta name="twitter:image" content="{{ site.url }}{{ page.twitter_card_image }}" >
-        <meta name="twitter:card" content="summary_large_image" >
-     {% endif %}
+        <div class="post__meta">
+          <a class="post__author" href="{{site.baseurl}}/about/">{{site.data.settings.author}}</a> – <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+        </div>
 
-     <!--  small twitter image -->
-     {% if page.twitter_small_card_image %}
-        <meta name="twitter:image" content="{{ site.url }}{{ page.twitter_small_card_image }}" >
-        <meta name="twitter:card" content="summary">
-     {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
 
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+<!-- begin post -->
+<div class="container animate">
 
-  {% if page.header_image %}
-      <p align="center">
-          <img src="{{ site.baseurl }}{{ page.header_image }}">
-      </p>
+  <!--  twitter card meta data -->
+  <!--  page title -->
+  {% if page.title %}
+    <meta name="twitter:title" content="{{ page.title }}" >
+  {% else %}
+    <meta name="twitter:title" content="{{ site.title }}" >
   {% endif %}
 
-  <article class="post-content">
-    {{ content }}
+  <!--  twitter site -->
+  {% if site.owner.twitter %}
+    <meta name="twitter:site" content="@{{ site.owner.twitter }}">
+  {% endif %}
+
+  <!--  description -->
+  {% if page.excerpt %}
+    <meta name="twitter:description" content="{{ page.excerpt }}" >
+  {% endif %}
+
+  <!--  twitter large image -->
+  {% if page.twitter_card_image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.twitter_card_image }}" >
+    <meta name="twitter:card" content="summary_large_image" >
+  {% endif %}
+
+  <!--  small twitter image -->
+  {% if page.twitter_small_card_image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.twitter_small_card_image }}" >
+    <meta name="twitter:card" content="summary">
+  {% endif %}
+
+  {% if page.image %}
+  <div class="row">
+    <div class="col col-12">
+      <div class="post-image">
+        <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <article class="post">
+
+    <div class="post__content">
+      {{ content }}
+    </div>
+
+    <div class="post__share">
+      <ul class="share__list list-reset">
+        <li class="share__item">
+          <a class="share__link share__twitter"
+            href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+        </li>
+        <li class="share__item">
+          <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+        </li>
+        <li class="share__item">
+          <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url={{ site.url }}{{ page.url }}&amp;media={{ site.url }}{{ site.baseurl }}{{ page.image }}&amp;description={{ page.title | uri_escape }}"
+          onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Pinterest"
+          rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
+        </li>
+        <li class="share__item">
+          <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title | uri_escape }}&summary={{ page.description | uri_escape }}&source={{ site.title | uri_escape }}"
+          onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    {% if site.data.settings.disqus-identifier %} {% include disqus-comments.html %} {% endif %}
+
   </article>
-
 </div>
+<!-- end post -->
 
-<div class="share-icons">
-  <h6>SHARE ON</h6>
-  <ul>
-    <li>
-      <a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
-    </li>
-    <li>
-      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
-    </li>
-    <li>
-      <a href="https://news.ycombinator.com/submitlink?u={{ site.url }}{{ page.url }}" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
-    </li>
-    <li>
-      <a href="https://www.reddit.com/submit?url={{ site.url }}{{ page.url }}" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
-    </li>
-  </ul>
-</div>
+{% include section-related-posts.html %}
 
-{% if site.owner.disqus-shortname and page.comments == true %}
-<div id="disqus_thread"></div>
-{% include disqus.html %}
-{% endif %}
-
-
-{% if site.related_posts.size > 0 %}
-<div class="related-articles">
-<h4>You might also enjoy</h4>
-  <ul>
-  {% for post in site.related_posts limit:3 %}
-    <li><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-  {% endfor %}
-  </ul>
-</div><!-- /.related-articles -->
-{% endif %}
+{% include section-subscribe.html %}

@@ -6,8 +6,8 @@ description: Easily jump through and analyze stack traces in Android Studio
 excerpt: "Easily jump through and analyze stack traces in Android Studio"
 permalink: /posts/analyze-stack-trace-in-android-studio
 comments: true
-twitter_small_card_image: /img/android-studio-icon.png
-header_image: /img/android-studio-icon.png
+twitter_small_card_image: /images/android-studio-icon.png
+header_image: /images/android-studio-icon.png
 tags: [android studio, tutorial, tips]
 ---
 
@@ -84,7 +84,7 @@ window is disabled. If you have an unscrambler installed, it appears as in the i
 are able to check the box and fill in the details.
 
 <p align="center">
-	<img src="/img/analyze-stack-trace-window-2.png"
+	<img src="/images/analyze-stack-trace-window-2.png"
   alt="Screenshot showing the Analyze Stack Trace Window with a Proguard Unscrambler installed">
 </p>
 

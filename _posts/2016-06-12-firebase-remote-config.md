@@ -6,9 +6,9 @@ description: Update your app without updating your app
 permalink: "/posts/firebase-remote-config"
 tags: [android, firebase, remote config]
 excerpt: Learn how to update your app without updating your app.
-twitter_card_image: "/img/firebase-icon.png"
+twitter_card_image: "/images/firebase-icon.png"
 comments: true
-header_image: /img/firebase-icon.png
+header_image: /images/firebase-icon.png
 ---
 
 I've probably said this countless times, that Firebase is one of the most exciting
@@ -104,7 +104,7 @@ An important step in using remote config is setting up the parameters we wish to
 To do this, we need to navigate to the **Remote Config** page from the left pane of the console dashboard.
 It should look like this:
 
-![](/img/remote-config-dashboard.png)
+![](/images/remote-config-dashboard.png)
 
 Next is to actually determine what values you want to remotely configure. It could range from theme colors,
 to messages and texts and discounts or whatsoever.
@@ -117,12 +117,12 @@ Please note that these policies exist concerning the kind of information you sho
 
 Once that's done, we just need to click on **ADD YOUR FIRST PARAMETER** as seen above.
 
-![](/img/remote-config-add-param.gif)
+![](/images/remote-config-add-param.gif)
 
 Be sure to click publish changes when you're done adding parameters.
 At the end of this step, you should have a dashboard that looks like this.
 
-![](/img/remote-config-publish.png)
+![](/images/remote-config-publish.png)
 
 #### Add conditions
 After adding your first parameter, you can now add conditions. Adding conditions allow you to
@@ -131,7 +131,7 @@ OS Version, random percentile of users, App version etc.
 
 Adding conditions is easy:
 
-![](/img/remote-config-add-condition.gif)
+![](/images/remote-config-add-condition.gif)
 
 You can also remove or modify your conditions by navigating to the conditions tab
 
@@ -139,7 +139,7 @@ After adding conditions, you can now specify the values to return if the conditi
 
 When you apply conditions to some values, your dashboard would look like this:
 
-![](/img/remote-config-conditions.png)
+![](/images/remote-config-conditions.png)
 
 You should note that there's a limit of 2000 parameters and up to 100 conditions and parameter keys can be
 256 characters long.
@@ -292,7 +292,7 @@ In the app, we have a signup screen with the sign up message configurable remote
 
 The demo app looks like this:
 
-![](/img/remote-config-sample.png)
+![](/images/remote-config-sample.png)
 
 Be sure you checkout the firebase-remote-config branch.
 

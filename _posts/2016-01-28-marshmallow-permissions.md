@@ -6,12 +6,12 @@ description: Quick update on using the new runtime permissions on Android 6.0 (M
 permalink: /posts/marshmallow-permissions
 tags: [android, tips]
 excerpt: "Quick update on using the new runtime permissions on Android 6.0 (Marshmallow)"
-twitter_card_image: /img/android-marshmallow.png
+twitter_card_image: /images/android-marshmallow.png
 comments: true
 ---
 
 <p align="center">
-	<img src="/img/android–marshmallow.png">
+	<img src="/images/android–marshmallow.png">
 </p>
 
 After a long wait, my AndroidOne finally got it’s Marshmallow update yesterday.

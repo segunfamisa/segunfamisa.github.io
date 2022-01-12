@@ -6,12 +6,12 @@ description: Quick intro to the new layout editor and ConstraintLayout in Androi
 permalink: "/posts/constraint-layout-in-android"
 tags: [android, layouts, constraint layout, android studio]
 excerpt: Quick intro to the new layout editor and ConstraintLayout in Android
-twitter_card_image: "/img/constraintlayout-header.png"
+twitter_card_image: "/images/constraintlayout-header.png"
 comments: true
 ---
 
 <p align="center">
-	<img src="/img/constraintlayout-header.png">
+	<img src="/images/constraintlayout-header.png">
 </p>
 
 Last week, also during the [Google I/O](https://events.google.com/io2016/) conference, Google introduced a new set of tools for Android developers. Among them is a new Layout editor and a new layout called the ConstraintLayout.
@@ -41,7 +41,7 @@ In principle, the ConstraintLayout works very similar to the RelativeLayout, but
 
 <div>
     <p align="center">
-        <img src="/img/constraint-layout-fig-b.png" alt="Figure B." style="width:320px; height:auto;">
+        <img src="/images/constraint-layout-fig-b.png" alt="Figure B." style="width:320px; height:auto;">
     </p>
     <p align="center">
         <a href="https://codelabs.developers.google.com/codelabs/constraint-layout/index.html#3">(Source) </a>
@@ -50,10 +50,10 @@ In principle, the ConstraintLayout works very similar to the RelativeLayout, but
 
 
 
-  * Resize handle. The resize handle is the ![alt text](/img/constraintlayout-resize-handle.png "Resize Handle") seen in the corners of the figure above, and it's used to resize the view.
+  * Resize handle. The resize handle is the ![alt text](/images/constraintlayout-resize-handle.png "Resize Handle") seen in the corners of the figure above, and it's used to resize the view.
 
-  * Side handle. The side handle is the ![alt text](/img/constraintlayout-side-handle.png "Side Handle") in the figure above, and it's used to specify the location of a widget. E.g using the left side handle to always be aligned to the right of another view, or the left of the ConstraintLayout itself.
-  * Baseline handle. The baseline handle is the ![alt text](/img/constraintlayout-baseline-handle.png "Baseline Handle") in the figure above. It is used to align the text of a view by the baseline of the text on another view.
+  * Side handle. The side handle is the ![alt text](/images/constraintlayout-side-handle.png "Side Handle") in the figure above, and it's used to specify the location of a widget. E.g using the left side handle to always be aligned to the right of another view, or the left of the ConstraintLayout itself.
+  * Baseline handle. The baseline handle is the ![alt text](/images/constraintlayout-baseline-handle.png "Baseline Handle") in the figure above. It is used to align the text of a view by the baseline of the text on another view.
 
 
 
@@ -80,7 +80,7 @@ and select the root element to be a ConstraintLayout or convert an existing layo
 
 
 <p align="center">
-	<img src="/img/constraintlayout-covert.png">
+	<img src="/images/constraintlayout-covert.png">
 </p>
 
 
@@ -96,7 +96,7 @@ You can also drag from the top side handle of the `TextView` to the bottom handl
 Now that we're able to add constraints, we will need to use the inspector. It's on the right hand side of the layout builder and it lists various properties of the selected widget. Typically, it looks as shown below:
 
 <p align="center">
-	<img src="/img/constraintlayout-inspector-pane.png">
+	<img src="/images/constraintlayout-inspector-pane.png">
 </p>
 
 You can use the sliders to move the view by percentage along the x and y axes.
@@ -105,21 +105,21 @@ You can also control the dimensions of the view from the inspector pane, by alte
 Taking a closer look at the square widget on the inspector pane. It contains some more control over the dimensions of the views.
 
 <p align="center">
-	<img src="/img/constraintlayout-inspector-widget.png">
+	<img src="/images/constraintlayout-inspector-widget.png">
 </p>
 
 There are other modes of controlling the size of the view. Clicking on the inner lines in the image above help you cycle through the other modes.
 
-  * Fixed mode: ![alt text]( {{site.baseurl}}/img/constraintlayout-inspector-fixed.png "Fixed mode") This allows you specify the width and height of the view.  
+  * Fixed mode: ![alt text]( {{site.baseurl}}/images/constraintlayout-inspector-fixed.png "Fixed mode") This allows you specify the width and height of the view.  
 
-  * Any size: ![alt text]( {{site.baseurl}}/img/constraintlayout-inspector-any-size.png "Any size") This mode allows the image to fill up all the space required to fulfill that constraint. You can look at this like _"match constraint"_  
+  * Any size: ![alt text]( {{site.baseurl}}/images/constraintlayout-inspector-any-size.png "Any size") This mode allows the image to fill up all the space required to fulfill that constraint. You can look at this like _"match constraint"_  
 
-  * Wrap content: ![alt text]( {{site.baseurl}}/img/constraintlayout-inspector-wrap-content.png "Wrap content") This just expands to fill the content of the view. E.g text or image
+  * Wrap content: ![alt text]( {{site.baseurl}}/images/constraintlayout-inspector-wrap-content.png "Wrap content") This just expands to fill the content of the view. E.g text or image
 
 
 ### Using Auto-connect to add constraints.
 Autoconnect as the name suggests, automatically creates connections between views/widgets. It tries to create connections to neighboring views/widgets.  
-To enable autoconnect, look out for the ![alt text]( {{site.baseurl}}/img/constraintlayout-autoconnect.png "Autoconnect") icon on the top bar of the layout editor.
+To enable autoconnect, look out for the ![alt text]( {{site.baseurl}}/images/constraintlayout-autoconnect.png "Autoconnect") icon on the top bar of the layout editor.
 
 ## Last words
 This post is not exhaustive of the ways to create and use the `ConstraintLayout` but it's meant to just serve as a primer. I will be sharing how to use Inference to create constraints at a later date. I hope you check out the references and further reading for more.

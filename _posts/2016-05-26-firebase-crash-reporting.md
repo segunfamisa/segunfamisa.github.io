@@ -6,13 +6,13 @@ description: Exploring the new crash reporting feature of Firebase
 permalink: "/posts/firebase-crash-reporting"
 tags: [android, firebase, crash reporting]
 excerpt: Exploring the new crash reporting feature of Firebase
-twitter_card_image: "/img/firebase-icon.png"
+twitter_card_image: "/images/firebase-icon.png"
 comments: true
 published: true
 ---
 
 <p align="center">
-	<img src="/img/firebase-icon.png">
+	<img src="/images/firebase-icon.png">
 </p>
 
 **Update:** (21st of September, 2016)  
@@ -110,7 +110,7 @@ FirebaseCrash.report(new Exception("My first Firebase non-fatal error on Android
 After a few minutes (it now takes about 2 minutes), the crash will appear on the console dashboard looking like:
 
 <p align="center">
-	<img src="/img/firebase-crash-dashboard.png">
+	<img src="/images/firebase-crash-dashboard.png">
 </p>
 
 ### Creating logs with Firebase
@@ -147,7 +147,7 @@ and I hope they continue to improve the product.
 crash reporting seems to be a separate process, as seen in the screenshot below:
 
 <p align="center">
-	<img src="/img/firebase-background-process.png">
+	<img src="/images/firebase-background-process.png">
 </p>
 
 This may lead to some concurrency issues, and It's filed under the known issues here [https://firebase.google.com/docs/crash/android#known-issues](https://firebase.google.com/docs/crash/android#known-issues)

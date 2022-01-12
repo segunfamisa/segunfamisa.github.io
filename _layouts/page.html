@@ -1,12 +1,37 @@
 ---
 layout: default
 ---
-<div class="{{ page.title | downcase }} page-heading">
-  <h1>{{ page.title }}</h1>
-  {{ content }}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="page__info">
+        <h1 class="page__title">{{ page.title | escape }}</h1>
+      </div>
+    </div>
+  </div>
 </div>
 
-{% if site.owner.disqus-shortname and page.comments == true %}
-<div id="disqus_thread"></div>
-{% include disqus.html %}
-{% endif %}
+<!-- begin page -->
+<div class="container animate">
+
+  {% if page.image %}
+  <div class="row">
+    <div class="col col-12">
+      <div class="page-image">
+        <img src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <article class="page">
+    <div class="page__content">
+      {{ content }}
+    </div>
+  </article>
+
+</div>
+<!-- end page -->
+
+{% include section-subscribe.html %}

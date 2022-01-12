@@ -6,9 +6,9 @@ description: Tutorial on how to use chrome custom tabs in Android.
 permalink: "/posts/chrome-custom-tabs"
 tags: [android, chrome, custom tabs, chrome custom tabs]
 excerpt: Tutorial on how to use chrome custom tabs in Android.
-twitter_card_image: "/img/chrome-logo.png"
+twitter_card_image: "/images/chrome-logo.png"
 comments: true
-header_image: /img/chrome-logo.png
+header_image: /images/chrome-logo.png
 ---
 
 ## Introduction
@@ -50,7 +50,7 @@ the transition between your app and the web content fast & seamless for your use
 This is Chrome Custom tab in action on Twitter for Android app:
 
 <p align="center">
-	<img src="/img/chrome-tab-twitter.gif">
+	<img src="/images/chrome-tab-twitter.gif">
 </p>
 
 
@@ -134,7 +134,7 @@ builder.setActionButton(icon, description, pendingIntent, tint);
 
 An action button is what is highlighted by the red box in the image below:
 <p align="center">
-	<img src="/img/chrome-tab-action-demo.png">
+	<img src="/images/chrome-tab-action-demo.png">
 </p>
 
 
@@ -155,7 +155,7 @@ intentBuilder.addMenuItem(label, pendingIntent);
 
 Custom menu items added are as highlighted in the image below:
 <p align="center">
-	<img src="/img/chrome-tab-menu-demo.png">
+	<img src="/images/chrome-tab-menu-demo.png">
 </p>
 
 #### c. Adding entry and exit animations.

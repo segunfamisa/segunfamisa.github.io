@@ -7,8 +7,8 @@ permalink: "/posts/notifications-direct-reply-android-nougat"
 tags: [android, android studio, tutorial, nougat, notifications]
 excerpt: Tutorial on how to implement notifications with direct reply in Android N
 comments: true
-twitter_card_image: "/img/android-nougat-banner.png"
-header_image: /img/android-nougat-banner.png
+twitter_card_image: "/images/android-nougat-banner.png"
+header_image: /images/android-nougat-banner.png
 ---
 
 # Introduction

@@ -7,8 +7,8 @@ permalink: "/posts/android-gradle-extra-properties"
 tags: [android, tip, android studio, gradle]
 excerpt: Android tip on how to use gradle extra properties to manage dependency versioning
 comments: true
-twitter_card_image: "/img/gradle-as.png"
-header_image: /img/gradle-as.png
+twitter_card_image: "/images/gradle-as.png"
+header_image: /images/gradle-as.png
 ---
 
 This is yet another tip you can use in improving your Android development experience
@@ -90,7 +90,7 @@ dependencies {
 ```
 
 <p align="center">
-	<img src="/img/wait-what-meme.jpg">
+	<img src="/images/wait-what-meme.jpg">
 </p>
 
 #### Wait...what changed!?
