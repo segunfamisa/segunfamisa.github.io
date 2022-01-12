@@ -13,6 +13,6 @@ My current tech interests are around building Mobile Applications (particulary A
 
 I'm in the Computing Science graduate program at the Georgia Institute of Technology (Georgia Tech).
 
-I'm a [music head](https://soundcloud.com/segunfamisa), an adventure junkie and I recently started learning take [photographs](https://unsplash.com/segunfamisa).
+I'm a [music head](https://soundcloud.com/segunfamisa), an adventure junkie and I recently started learning to take [photographs](https://unsplash.com/segunfamisa).
 
 ***
