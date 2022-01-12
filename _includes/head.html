@@ -45,6 +45,13 @@
     }
   </script>
 
+  <script type="text/javascript">
+    var host = "segunfamisa.com";
+    var gh = "segunfamisa.github.io"
+    if (((host == window.location.host) || (gh == window.location.host)) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+
   <style>
   {% capture include_to_scssify %}
     {% include main.scss %}
