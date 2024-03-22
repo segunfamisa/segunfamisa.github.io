@@ -106,3 +106,4 @@ disqus-identifier: segunfamisa-site # add your shortname for Disqus Comment. For
 #-------------------------------
 # Google Analytics
 google-analytics: UA-65661219-1 # Add your identifier. For example UA-99631805-1.
+posthog: phc_Q7iwBiGnGSo40rP7hHmrzcEmWIVTLEgTRxyUsvuYW6C
