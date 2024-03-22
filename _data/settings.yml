@@ -82,6 +82,7 @@ hero:
 social:
 - {icon: "ion-logo-twitter", color: "#55acee", label: Twitter, link: "https://twitter.com/segunfamisa"}
 - {icon: "ion-logo-github", color: "#333333", label: GitHub, link: "https://github.com/segunfamisa"}
+- {icon: "ion-logo-linkedin", color: "#0077B5", label: LinkedIn, link: "https://linkedin.com/in/segunfamisa"}
 
 # Example of adding a new link to the footer section - {icon: "ion-logo-github", color: "#24292e, label: Github, link: "https://github.com"}
 # Other icons can be found at https://ionicons.com/v4/
@@ -104,6 +105,6 @@ disqus-identifier: segunfamisa-site # add your shortname for Disqus Comment. For
 
 
 #-------------------------------
-# Google Analytics
-google-analytics: UA-65661219-1 # Add your identifier. For example UA-99631805-1.
+# Analytics
+#google-analytics: # Add your identifier. For example UA-99631805-1.
 posthog: phc_Q7iwBiGnGSo40rP7hHmrzcEmWIVTLEgTRxyUsvuYW6C
