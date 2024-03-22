@@ -4,11 +4,14 @@ title: "Analyzing your Gradle dependencies"
 date: 2024-03-14 20:00:00
 description: How to analyze your Gradle dependencies
 permalink: /posts/analyze-gradle-dependencies
-comments: False
+excerpt: How to analyze your Gradle dependencies
+comments: false
 tags: [gradle, tutorial, tips]
 ---
 
-As Android developers, every now and then, we may have to investigate or analyze the Gradle dependencies we are using. Whether we are trying to find out which versions of libraries we are using, or we are trying to find out where one - perhaps unusual dependency is coming from, we may end up needing this knowledge.
+> _Featured in [Android Weekly #614](https://androidweekly.net/issues/issue-614/) and [Kotlin Weekly #398](https://mailchi.mp/kotlinweekly/kotlin-weekly-398)_
+
+As Android developers, now and then, we may have to investigate or analyze the Gradle dependencies we are using. Whether we are trying to find out which versions of libraries we are using, or we are trying to find out where one - perhaps unusual dependency is coming from, we may end up needing this knowledge.
 
 A short story. Recently, [leak canary](https://square.github.io/leakcanary/) - which we use to detect memory leaks - was found to be deactivated in our project. Upon investigating, I found that it was [deactivated because a test dependency was accidentally added to the classpath of our debug builds](https://github.com/square/leakcanary/issues/1968#issuecomment-724224577). So, I had to investigate to find out what test dependency is there, and how it got there.
 
@@ -16,11 +19,11 @@ In this post, I will share some tips that can help you analyze our Gradle depend
 
 ## Analyzing the configurations
 
-First, in order to analyze the dependencies, one needs to know which kinds of dependencies one is looking for. We can do this by trying to understand _how_ exactly the dependencies are declared - and that determines how they end up in the classpath. In other words, we need to know the configurations.
+First, to analyze the dependencies, one needs to know which kinds of dependencies one is looking for. We can do this by trying to understand _how_ exactly the dependencies are declared - and that determines how they end up in the classpath. In other words, we need to know the configurations.
 
-Configurations are a way for you to tell Gradle how exactly to package these dependencies in order to achieve the final output. Some dependencies might be used only in compile time, while some are needed both in compile time and runtime. Some might even have special behaviours, or relations to plugins like `kapt` and `ksp`, or only available in certain source sets - like tests.
+Configurations are a way for you to tell Gradle how exactly to package these dependencies to achieve the final output. Some dependencies might be used only in compile time, while some are needed both in compile time and runtime. Some might even have special behaviors, or relations to plugins like `kapt` and `ksp`, or only available in certain source sets - like tests.
 
-As described on [Google's guide to declaring dependencies](https://developer.android.com/build/dependencies#dependency_configurations), some of the officially supported configurations include `api`, `implementation`, `compileOnly`, `runtimeOnly` among others.
+As described in [Google's guide to declaring dependencies](https://developer.android.com/build/dependencies#dependency_configurations), some of the officially supported configurations include `api`, `implementation`, `compileOnly`, `runtimeOnly` among others.
 
 In version 7.5 and above, Gradle provides a [ResolvableConfigurationsTask](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/diagnostics/ResolvableConfigurationsReportTask.html) task that reports all the configurations that can be resolved within your project. The task is run as indicated below.
 
@@ -32,7 +35,7 @@ In version 7.5 and above, Gradle provides a [ResolvableConfigurationsTask](https
 
 The report is printed to the command line, and as a result, I often like to pipe the output of the command to a file, so that I can open and search properly. You can do that by running `./gradlew :app:resolvableConfigurations > conf.txt`.
 
-The report prints all the configurations, including their names, attributes and other configurations they extend. One of such configurations (`debugCompileClasspath`) is shown below:
+The report prints all the configurations, including their names, attributes, and other configurations they extend. One of such configurations (`debugCompileClasspath`) is shown below:
 
 ```
 --------------------------------------------------
@@ -55,7 +58,7 @@ Extended Configurations
 ...
 ```
 
-The compile classpath is typically what you are interested in, if you are trying to find out which dependencies are compiled with the app - so you can check the compile class path for each of your build types and product flavor combinations.
+The compile classpath is typically what you are interested in if you are trying to find out which dependencies are compiled with the app - so you can check the compile classpath for each of your build types and product flavor combinations.
 
 Okay. Now, we have identified the configuration which we want to investigate. Let's proceed to check which dependencies are available in that configuration.
 
@@ -69,7 +72,7 @@ The `dependency` task takes a parameter `--configuration` which tells Gradle whi
 ./gradlew :app:dependencies --configuration debugCompileClasspath
 ```
 
-The command above prints out all the dependencies applied in the `debugCompileClasspath` configuration - i.e, all the dependencies that are packaged into the debug build. The output of the command looks something like this:
+The command above prints out all the dependencies applied in the `debugCompileClasspath` configuration - i.e., all the dependencies that are packaged into the debug build. The output of the command looks something like this:
 
 ```bash
 ------------------------------------------------------------
@@ -90,7 +93,7 @@ debugCompileClasspath - Compile classpath for compilation 'debug' (target  (andr
 ...
 ```
 
-On the other hand, if we already know which dependency we are looking for, we can use `dependencyInsight` task and specify the `group:name` or a part of the dependency name. For example, to find out information about the arrow-kt dependency above, we can run:
+On the other hand, if we already know which dependency we are looking for, we can use the `dependencyInsight` task and specify the `group:name` or a part of the dependency name. For example, to find out information about the arrow-kt dependency above, we can run:
 
 ```bash
 ./gradlew -q app:dependencyInsight --configuration debugCompileClasspath  --dependency arrow-kt
@@ -98,13 +101,13 @@ On the other hand, if we already know which dependency we are looking for, we ca
 
 ## Conclusion
 
-The approaches described above have proven to be immensely helpful in debugging and analyzing dependencies in my projects. I am able to determine which configurations exist in my project, and with that information, I can explore the dependencies in that configuration.
+The approaches described above have proven to be immensely helpful in debugging and analyzing dependencies in my projects. I can determine which configurations exist in my project, and with that information, I can explore the dependencies in that configuration.
 
-With these commands, I was able to pinpoint which dependency caused our leak canary to be deactivated, and provided a fix.
+With these commands, I was able to pinpoint which dependency caused our leak canary to be deactivated and provided a fix.
 
-I imagine that there are additional usecases like investigating a transitive dependency, or in case of version conflicts, finding out how the conflict is resolved and which version supercedes the other, to mention a few.
+I imagine that there are additional use cases like investigating a transitive dependency, or in case of version conflicts, finding out how the conflict is resolved and which version supersedes the other, to mention a few.
 
-Thank you for reading. I hope this was at helpful or informative in some way.
+Thank you for reading. I hope this was helpful or informative in some way.
 
 For more reading about Gradle dependencies, you can have a look at the following resources:
 
