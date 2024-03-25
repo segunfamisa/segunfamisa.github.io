@@ -15,6 +15,6 @@ My current tech interests are around building mobile applications (particularly 
 
 I'm a [musichead](https://soundcloud.com/segunfamisa), an adventure junkie and I recently started learning to take [photographs](https://unsplash.com/segunfamisa).
 
-I hold an M.S. in Computer Science from [Georgia Tech](https://www.gatech.edu/). You can have a peek at my [resume here](https://docs.google.com/document/d/1txRHkfdq2dQ-adPze5xpPEQSXNA_cUZx1Ue8LMHhc_8/edit).
+I hold an M.S. in Computer Science from [Georgia Tech](https://www.gatech.edu/). You can have a peek at my [resume here](https://docs.google.com/document/d/e/2PACX-1vQqnQ8WjsixzyVDoyxgGFuTnjeagy4MKK1pZ-h3TsG3gjzz5Bs1oEy9Q4xklbhO28kEpFCBcxt-DFKz/pub).
 
 ***
