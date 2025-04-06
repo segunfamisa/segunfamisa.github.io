@@ -23,7 +23,15 @@
             <ul class="nav__list list-reset">
               {% for item in site.data.settings.menu__settings.menu__items %}
                 <li class="nav__item">
-                  <a href="{{ item.url | relative_url }}" class="nav__link{% if page.url == item.url %} nav__link--current{% endif %}">{{ item.title }}</a>
+                  {% if item.external == 'true' %}
+                    <a href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer" class="nav__link">
+                      {{ item.title }}
+                    </a>
+                  {% else %}
+                    <a href="{{ item.url | relative_url }}" class="nav__link{% if page.url == item.url %} nav__link--current{% endif %}">
+                      {{ item.title }}
+                    </a>
+                  {% endif %}
                 </li>
               {% endfor %}
               <li class="nav__item">

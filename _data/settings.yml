@@ -16,6 +16,9 @@ menu__settings:
       url: '/posts/'
     - title: 'About'
       url: '/about/'
+    - title: 'Photos'
+      url: 'https://unsplash.com/segunfamisa'
+      external: 'true'
     # - title: 'Contact'
     #   url: '/contact/'
 
