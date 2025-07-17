@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Making Live Templates in Android Studio"
+title: "Live Templates in Android Studio"
 description: Notes about my favourite Android Studio live template
 permalink: /posts/android-studio-live-templates
 excerpt: Notes about my favourite Android Studio live template
