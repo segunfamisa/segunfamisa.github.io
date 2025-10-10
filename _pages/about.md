@@ -7,7 +7,7 @@ image: '/images/about_cover.jpg'
 
 Hi, I'm Segun. Everyone calls me SF. I'm a Software Engineer living in Berlin.
 
-I have worked at [Delivery Hero](https://deliveryhero.com), [SoundCloud](https://soundcloud.com), [trivago](https://trivago.com), [Andela](https://andela.com) and [Konga](https://konga.com) in various IC functions, primarily focused on mobile applications.
+I have worked at [DoorDash](https://doordash.com), [Wolt (acquired by DoorDash)](https://wolt.com), [Delivery Hero](https://deliveryhero.com), [SoundCloud](https://soundcloud.com), [trivago](https://trivago.com) in various IC functions, primarily focused on mobile applications.
 
 I'm a [Google Developers Expert for Android](https://developers.google.com/community/experts/directory/profile/profile-oluwasegun-famisa) and I'm active in the developer community.
 
