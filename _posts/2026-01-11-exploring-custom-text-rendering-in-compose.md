@@ -21,12 +21,16 @@ Before I talk through my take on some of the custom text renderings I want to re
 The [TextMeasurer](https://developer.android.com/reference/kotlin/androidx/compose/ui/text/TextMeasurer) API allows us to - you guessed it - measure the text before we draw it. It takes into account the style, text, constraints, and other things that could influence the size of the text. TextMeasurer has a `measure`  function that returns a `TextLayoutResult`. The typical way one would create a text measurer is:
 
 ```kotlin
+val textStyle = MaterialTheme.typography.headlineLarge
+val text = "My special text"
 val textMeasurer = rememberTextMeasurer()
-val textLayoutResult = textMeasurer.measure(
-  text = "My special text",
-  style = MaterialTheme.typography.headlineLarge,
-  //constraints = Constraints(maxWidth = maxWidthPx.toInt()) <--- if you need constraints
-)
+val textLayoutResult = remember(text, textStyle, constraints) {
+  textMeasurer.measure(
+    text = text,
+    style = textStyle,
+    //constraints = constraints <--- if you need constraints
+  )
+}
 ```
 
 ## TextLayoutResult
@@ -77,11 +81,13 @@ fun FadedText(text: String, textStyle: TextStyle, modifier: Modifier = Modifier)
   
     // measure text, considering the max width constraint
     val textMeasurer = rememberTextMeasurer()
-    val textLayout = textMeasurer.measure(
-      text = text,
-      style = textStyle,
-      constraints = Constraints(maxWidth = maxWidthPx.toInt())
-    )
+    val textLayout = remember(text, textStyle, constraints) {
+      textMeasurer.measure(
+        text = text,
+        style = textStyle,
+        constraints = constraints
+      )
+    }
   
     val canvasSize = with(density) {
       DpSize(textLayout.size.width.toDp(), textLayout.size.height.toDp())
@@ -153,11 +159,13 @@ This one looked interesting. My intuition was that it looks like we need to move
 // similar code as above, so I will paraphrase a bit
 // measure text, considering the max width constraint
 val textMeasurer = rememberTextMeasurer()
-val textLayout = textMeasurer.measure(
-    text = text,
-    style = textStyle,
-    constraints = Constraints(maxWidth = maxWidthPx.toInt())
-)
+val textLayout = remember(text, textStyle, constraints) {
+    textMeasurer.measure(
+        text = text,
+        style = textStyle,
+        constraints = constraints
+    )
+} 
 
 val canvasSize = with(density) {
     DpSize(textLayout.size.width.toDp(), textLayout.size.height.toDp())
