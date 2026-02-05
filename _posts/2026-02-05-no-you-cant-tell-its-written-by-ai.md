@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "No. You can't tell it was written by AI   "
+title: "No. You can't tell it was written by AI"
 description: Strong opinions about AI "tells"
 permalink: /posts/no-you-cant-tell-it-was-written-by-ai
 excerpt: Strong opinions about AI "tells"
