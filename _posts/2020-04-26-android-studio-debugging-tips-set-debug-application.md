@@ -4,12 +4,13 @@ title:  "Debugging Android app launch by setting debug app"
 date:   2020-04-26 09:00:00
 description: Android debugging tip - attach Android Studio debugger at app start up
 excerpt: "Android debugging tip - attach Android Studio debugger at app start up"
+slug: android-debugging-set-debug-app
 permalink: /posts/android-debugging-set-debug-app
 comments: true
 twitter_small_card_image: /images/android-studio-icon.png
 header_image: /images/android-studio-icon.png
 tags: [android studio, tips, debuggger, adb]
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oey7g432t"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syjuqcy2y"
 ---
 
 Recently, I had to debug a deeplink problem that happens only on fresh app start-up. I was particularly

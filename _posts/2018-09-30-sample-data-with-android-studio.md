@@ -4,12 +4,13 @@ title:  "Using sample data resources in Android Studio"
 date:   2018-10-01 09:00:00
 description: Use sample data resources for easy layout preview in Android Studio
 excerpt: "Use sample data resources for easy layout preview in Android Studio"
+slug: sample-data-with-android-studio
 permalink: /posts/sample-data-with-android-studio
 comments: true
 twitter_small_card_image: /images/android-studio-icon.png
 header_image: /images/android-studio-icon.png
 tags: [android studio, tutorial, tips, layout preview]
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oeymxfg2p"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syl2qow2c"
 ---
 
 Recently, [Android Studio 3.2](https://developer.android.com/studio/) became stable. The new release brings loads of goodies (explained in the release post [here](https://android-developers.googleblog.com/2018/09/android-studio-32.html)). One of the nice features that caught my attention was the support for Sample data.

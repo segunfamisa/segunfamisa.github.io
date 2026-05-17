@@ -2,11 +2,12 @@
 layout: post
 title: "Exploring Custom Text Rendering with Jetpack Compose"
 description: Notes from exploring custom text rendering in Jetpack Compose
+slug: exploring-custom-text-rendering-in-compose
 permalink: /posts/exploring-custom-text-rendering-in-compose
 excerpt: Notes from exploring custom text rendering in Jetpack Compose
 date: 2026-01-11 07:00:00 +0100
 tags: [android, jetpack compose]
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oewih7w2t"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syia2lo26"
 ---
 
 > TL;DR: exploring [TextMeasurer](https://developer.android.com/reference/kotlin/androidx/compose/ui/text/TextMeasurer), [TextLayoutResult](https://developer.android.com/reference/kotlin/androidx/compose/ui/text/TextLayoutResult) and [Canvas](https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Canvas) for custom text rendering with Jetpack compose

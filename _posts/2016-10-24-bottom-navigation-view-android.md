@@ -3,13 +3,14 @@ layout: post
 title: Implementing Bottom Navigation View in your app
 date: 2016-10-24 08:42:45
 description: Tutorial on how to implement the new bottom navigation view with the support library
+slug: "bottom-navigation-view-android"
 permalink: "/posts/bottom-navigation-view-android"
 tags: [android, android studio, tutorial, material design, support library]
 excerpt: Tutorial on how to implement the new bottom navigation view with the support library
 comments: true
 twitter_small_card_image: /images/android.jpg
 header_image: /images/android.jpg
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oez6kh627"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2sylrqjd25"
 ---
 
 Sometimes in March 2016, [Luke Wroblewski announced](https://twitter.com/lukew/status/709580252830273537) that the

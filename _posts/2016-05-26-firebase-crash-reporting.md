@@ -3,13 +3,14 @@ layout: post
 title: Crash reporting in Firebase
 date: 2016-05-26 12:05:30
 description: Exploring the new crash reporting feature of Firebase
+slug: "firebase-crash-reporting"
 permalink: "/posts/firebase-crash-reporting"
 tags: [android, firebase, crash reporting]
 excerpt: Exploring the new crash reporting feature of Firebase
 twitter_card_image: "/images/firebase-icon.png"
 comments: true
 published: true
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of5ypux2n"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syqkbyo2e"
 ---
 
 <p align="center">

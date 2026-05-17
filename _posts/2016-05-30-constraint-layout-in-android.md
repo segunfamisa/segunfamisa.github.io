@@ -3,12 +3,13 @@ layout: post
 title: Intro to the new ConstraintLayout in Android
 date: 2016-05-30 11:05:30
 description: Quick intro to the new layout editor and ConstraintLayout in Android
+slug: "constraint-layout-in-android"
 permalink: "/posts/constraint-layout-in-android"
 tags: [android, layouts, constraint layout, android studio]
 excerpt: Quick intro to the new layout editor and ConstraintLayout in Android
 twitter_card_image: "/images/constraintlayout-header.png"
 comments: true
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of5uoe52x"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syqgct727"
 ---
 
 <p align="center">
