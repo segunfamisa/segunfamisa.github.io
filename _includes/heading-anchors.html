@@ -1,0 +1,27 @@
+<script>
+  (function () {
+    var headings = document.querySelectorAll(".content h2[id], .content h3[id], .content h4[id], .content h5[id], .content h6[id]");
+
+    headings.forEach(function (heading) {
+      if (heading.querySelector(".heading-link")) {
+        return;
+      }
+
+      var link = document.createElement("a");
+      var marker = document.createElement("span");
+
+      link.className = "heading-link";
+      link.href = "#" + encodeURIComponent(heading.id);
+      marker.className = "heading-anchor";
+      marker.setAttribute("aria-hidden", "true");
+      marker.textContent = "#";
+
+      while (heading.firstChild) {
+        link.appendChild(heading.firstChild);
+      }
+
+      link.insertBefore(marker, link.firstChild);
+      heading.appendChild(link);
+    });
+  })();
+</script>

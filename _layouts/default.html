@@ -1,32 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    {% include seo.html %}
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    <div class="site">
+      <header class="site-header">
+        <nav class="site-nav" aria-label="Primary navigation">
+          {% for item in site.nav %}
+            <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
+          {% endfor %}
+          {% if site.tag_pages.enabled and site.tag_pages.show_in_nav %}
+            <a href="{{ '/tags/' | relative_url }}" {% if page.url == '/tags/' %}aria-current="page"{% endif %}>tags</a>
+          {% endif %}
+          {% if site.search.enabled and site.search.modal and site.search.show_in_nav and page.search_modal != false %}
+            <button class="search-trigger" type="button" data-search-open>
+              search <kbd>⌘K</kbd>
+            </button>
+          {% endif %}
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 11.5373 21.3065 11.4608 21.0672 11.8568C19.9289 13.7406 17.8615 15 15.5 15C11.9101 15 9 12.0899 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"/>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21,11H17.91a6,6,0,0,0-1-2.47l2.18-2.19a1,1,0,1,0-1.41-1.41L15.47,7.11a6,6,0,0,0-2.47-1V3a1,1,0,0,0-2,0V6.09a6,6,0,0,0-2.47,1L6.34,4.93A1,1,0,0,0,4.93,6.34L7.11,8.53a6,6,0,0,0-1,2.47H3a1,1,0,0,0,0,2H6.09a6,6,0,0,0,1,2.47L4.93,17.66a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l2.19-2.18a6,6,0,0,0,2.47,1V21a1,1,0,0,0,2,0V17.91a6,6,0,0,0,2.47-1l2.19,2.18a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41l-2.18-2.19a6,6,0,0,0,1-2.47H21a1,1,0,0,0,0-2Zm-9,5a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z" fill="currentColor"/>
+            </svg>
+          </button>
+        </nav>
+      </header>
 
-{% include head.html %}
-
-<body>
-
-  {% if site.data.settings.google-analytics %}
-    {% include google-analytics.html %}
-  {% endif %}
-  
-  {% if site.data.settings.posthog %}
-    {% include posthog.html %}
-  {% endif %}
-
-  {% include header.html %}
-
-  <!-- begin content -->
-  <main class="content" aria-label="Content">
-    {{ content }}
-  </main>
-  <!-- end content -->
-
-  <div class="top" title="Top"><i class="ion ion-ios-arrow-round-up"></i></div>
-
-  {% include footer.html %}
-
-  <script src="{{ site.baseurl }}/js/scripts.js"></script>
-  <script src="{{ site.baseurl }}/js/common.js"></script>
-</body>
-
+      <main id="content" class="content {{ page.class }}">
+        {{ content }}
+      </main>
+    </div>
+    {% if site.search.enabled and site.search.modal and page.search_modal != false %}
+      <div class="search-modal" data-search-modal hidden>
+        <div class="search-modal__backdrop" data-search-close></div>
+        <section class="search-modal__panel" role="dialog" aria-modal="true" aria-label="Search">
+          <form class="search-modal__form" data-search-form>
+            <svg class="search-modal__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10.5 4a6.5 6.5 0 0 1 5.16 10.45l3.45 3.44a1 1 0 0 1-1.42 1.42l-3.44-3.45A6.5 6.5 0 1 1 10.5 4Zm0 2a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" fill="currentColor"/>
+            </svg>
+            <input class="search-modal__input" type="search" placeholder="Search" autocomplete="off" spellcheck="false" data-search-input>
+          </form>
+          <div class="search-modal__results" data-search-results></div>
+          <footer class="search-modal__footer">
+            <span><kbd>↵</kbd> open</span>
+            <span><kbd>esc</kbd> close</span>
+          </footer>
+        </section>
+      </div>
+    {% endif %}
+    {% include theme.html %}
+    {% include heading-anchors.html %}
+    {% include search.html %}
+    {% if site.data.settings.posthog %}
+      {% include posthog.html %}
+    {% endif %}
+  </body>
 </html>

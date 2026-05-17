@@ -7,10 +7,9 @@ slug: "firebase-crash-reporting"
 permalink: "/posts/firebase-crash-reporting"
 tags: [android, firebase, crash reporting]
 excerpt: Exploring the new crash reporting feature of Firebase
-twitter_card_image: "/images/firebase-icon.png"
-comments: true
+image: "/images/firebase-icon.png"
 published: true
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syqkbyo2e"
+standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syqkbyo2e"
 ---
 
 <p align="center">

@@ -1,0 +1,151 @@
+{% if site.search.enabled and site.search.modal and page.search_modal != false %}
+  <script src="{{ site.search.library_url }}"></script>
+  <script>
+    (function () {
+      var modal = document.querySelector("[data-search-modal]");
+      var input = document.querySelector("[data-search-input]");
+      var results = document.querySelector("[data-search-results]");
+      var form = document.querySelector("[data-search-form]");
+      var openButtons = document.querySelectorAll("[data-search-open]");
+      var closeButtons = document.querySelectorAll("[data-search-close]");
+      var activeResults = [];
+      var selectedIndex = -1;
+
+      if (!modal || !input || !results || !form) {
+        return;
+      }
+
+      function isMac() {
+        return /Mac|iPhone|iPad|iPod/.test(window.navigator.platform);
+      }
+
+      function setShortcutLabels() {
+        document.querySelectorAll(".search-trigger kbd").forEach(function (key) {
+          key.textContent = isMac() ? "⌘K" : "Ctrl K";
+        });
+      }
+
+      function openSearch() {
+        modal.hidden = false;
+        document.documentElement.classList.add("search-is-open");
+        window.setTimeout(function () {
+          input.focus();
+        }, 0);
+      }
+
+      function closeSearch() {
+        modal.hidden = true;
+        document.documentElement.classList.remove("search-is-open");
+      }
+
+      function renderEmpty(message) {
+        activeResults = [];
+        selectedIndex = -1;
+        results.innerHTML = '<p class="search-modal__message">' + message + '</p>';
+      }
+
+      function setSelected(index) {
+        selectedIndex = index;
+        results.querySelectorAll(".search-result").forEach(function (result, currentIndex) {
+          result.toggleAttribute("aria-selected", currentIndex === selectedIndex);
+        });
+      }
+
+      function syncResults() {
+        window.setTimeout(function () {
+          activeResults = Array.prototype.map.call(results.querySelectorAll(".search-result"), function (link) {
+            return { url: link.getAttribute("href") };
+          });
+          if (input.value.trim() && !activeResults.length) {
+            renderEmpty("No results");
+          } else if (!input.value.trim()) {
+            renderEmpty("Start typing to search");
+          } else {
+            setSelected(0);
+          }
+        }, 0);
+      }
+
+      if (window.SimpleJekyllSearch) {
+        SimpleJekyllSearch({
+          searchInput: input,
+          resultsContainer: results,
+          json: "{{ site.search.json_path | default: '/search.json' | relative_url }}",
+          limit: {{ site.search.limit | default: 8 }},
+          noResultsText: '<p class="search-modal__message">No results</p>',
+          searchResultTemplate: [
+            '<a class="search-result" href="{url}">',
+            '<span class="search-result__title">{title}</span>',
+            '<span class="search-result__excerpt">{date}{tags}</span>',
+            '</a>'
+          ].join(""),
+          templateMiddleware: function (prop, value, template) {
+            if (prop === "tags" && value) {
+              return " · " + value;
+            }
+            return value || "";
+          }
+        });
+      } else {
+        renderEmpty("Search failed to load");
+      }
+
+      input.addEventListener("input", syncResults);
+
+      new MutationObserver(function () {
+        if (input.value.trim()) {
+          syncResults();
+        }
+      }).observe(results, { childList: true });
+
+      openButtons.forEach(function (button) {
+        button.addEventListener("click", openSearch);
+      });
+
+      closeButtons.forEach(function (button) {
+        button.addEventListener("click", closeSearch);
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (activeResults[selectedIndex]) {
+          window.location.href = activeResults[selectedIndex].url;
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        var shortcutPressed = (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k";
+        if (shortcutPressed && {{ site.search.shortcut | default: true }}) {
+          event.preventDefault();
+          openSearch();
+          return;
+        }
+        if (modal.hidden) {
+          return;
+        }
+        if (event.key === "Escape") {
+          closeSearch();
+        }
+        if (event.key === "ArrowDown" && activeResults.length) {
+          event.preventDefault();
+          setSelected(Math.min(selectedIndex + 1, activeResults.length - 1));
+        }
+        if (event.key === "ArrowUp" && activeResults.length) {
+          event.preventDefault();
+          setSelected(Math.max(selectedIndex - 1, 0));
+        }
+      });
+
+      results.addEventListener("mouseover", function (event) {
+        var link = event.target.closest(".search-result");
+        if (!link) {
+          return;
+        }
+        setSelected(Array.prototype.indexOf.call(results.querySelectorAll(".search-result"), link));
+      });
+
+      setShortcutLabels();
+      renderEmpty("Start typing to search");
+    })();
+  </script>
+{% endif %}

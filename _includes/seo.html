@@ -1,0 +1,89 @@
+{% assign seo_title = page.seo_title | default: page.title | default: site.title %}
+{% if seo_title == "Home" %}
+  {% assign seo_title = site.title %}
+{% endif %}
+{% assign page_title = seo_title %}
+{% unless page_title == site.title %}
+  {% assign page_title = page_title | append: " · " | append: site.title %}
+{% else %}
+  {% assign page_title = site.title %}
+{% endunless %}
+
+{% assign seo_description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 %}
+{% assign seo_url = page.canonical_url | default: page.url | absolute_url %}
+{% assign seo_image = page.image | default: site.seo.image %}
+{% assign atproto_profile_url = site.atproto.profile_url %}
+{% if atproto_profile_url == nil or atproto_profile_url == "" %}
+  {% if site.atproto.handle %}
+    {% assign atproto_profile_url = "https://bsky.app/profile/" | append: site.atproto.handle %}
+  {% endif %}
+{% endif %}
+{% assign seo_type = "website" %}
+{% if page.layout == "post" %}
+  {% assign seo_type = "article" %}
+{% endif %}
+
+<title>{{ page_title | escape }}</title>
+<meta name="description" content="{{ seo_description | escape }}">
+<meta name="author" content="{{ site.author.name | default: site.title | escape }}">
+<link rel="canonical" href="{{ seo_url }}">
+{% if site.atproto.enabled and atproto_profile_url %}
+<link rel="me" href="{{ atproto_profile_url }}">
+{% endif %}
+{% assign standard_document_at_uri = page.standard_site.document.at_uri | default: page.standard_document_at_uri %}
+{% if site.standard_site.enabled and standard_document_at_uri %}
+<link rel="site.standard.document" href="{{ standard_document_at_uri }}">
+{% endif %}
+{% if page.noindex %}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
+
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:locale" content="{{ site.seo.locale | default: 'en_US' }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:type" content="{{ seo_type }}">
+{% if seo_image %}
+<meta property="og:image" content="{{ seo_image | absolute_url }}">
+{% endif %}
+
+<meta name="twitter:card" content="{% if seo_image %}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+{% if seo_image %}
+<meta name="twitter:image" content="{{ seo_image | absolute_url }}">
+{% endif %}
+{% if site.seo.twitter %}
+<meta name="twitter:site" content="{{ site.seo.twitter }}">
+{% endif %}
+
+{% if page.layout == "post" %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% if page.modified_date %}
+<meta property="article:modified_time" content="{{ page.modified_date | date_to_xmlschema }}">
+{% endif %}
+{% for tag in page.tags %}
+<meta property="article:tag" content="{{ tag | escape }}">
+{% endfor %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{% if page.layout == 'post' %}BlogPosting{% else %}WebPage{% endif %}",
+  "headline": {{ seo_title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "url": {{ seo_url | jsonify }},
+  {% if seo_image %}"image": {{ seo_image | absolute_url | jsonify }},{% endif %}
+  {% if page.layout == "post" %}"datePublished": {{ page.date | date_to_xmlschema | jsonify }},{% endif %}
+  {% if page.modified_date %}"dateModified": {{ page.modified_date | date_to_xmlschema | jsonify }},{% endif %}
+  "author": {
+    "@type": "Person",
+    "name": {{ site.author.name | default: site.title | jsonify }}{% if site.atproto.enabled and atproto_profile_url %},
+    "sameAs": [
+      {{ atproto_profile_url | jsonify }}
+    ]{% endif %}
+  }
+}
+</script>
