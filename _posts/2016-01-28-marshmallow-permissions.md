@@ -3,12 +3,13 @@ layout: post
 title: "May I have some Marshmallows, please?"
 date: 2016-01-28 03:05:30
 description: Quick update on using the new runtime permissions on Android 6.0 (Marshmallow)
+slug: marshmallow-permissions
 permalink: /posts/marshmallow-permissions
 tags: [android, tips]
 excerpt: "Quick update on using the new runtime permissions on Android 6.0 (Marshmallow)"
 twitter_card_image: /images/android-marshmallow.png
 comments: true
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of64wgx2i"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syqo5fl25"
 ---
 
 <p align="center">

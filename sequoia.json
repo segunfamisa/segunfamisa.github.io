@@ -1,0 +1,17 @@
+{
+  "$schema": "https://tangled.org/stevedylan.dev/sequoia/raw/main/sequoia.schema.json",
+  "siteUrl": "https://segunfamisa.com",
+  "contentDir": "./_posts",
+  "imagesDir": "./images",
+  "publicDir": "./",
+  "outputDir": "./_site",
+  "publicationUri": "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.publication/3mm2oa7vz5327",
+  "frontmatter": {
+    "publishDate": "date",
+    "coverImage": "header_image",
+    "slugField": "slug"
+  },
+  "publishContent": true,
+  "stripDatePrefix": true,
+  "removeIndexFromSlug": true
+}

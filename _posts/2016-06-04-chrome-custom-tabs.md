@@ -3,13 +3,14 @@ layout: post
 title: Chrome Custom Tabs in Android
 date: 2016-06-04 08:05:30
 description: Tutorial on how to use chrome custom tabs in Android.
+slug: "chrome-custom-tabs"
 permalink: "/posts/chrome-custom-tabs"
 tags: [android, chrome, custom tabs, chrome custom tabs]
 excerpt: Tutorial on how to use chrome custom tabs in Android.
 twitter_card_image: "/images/chrome-logo.png"
 comments: true
 header_image: /images/chrome-logo.png
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of5fgcg2p"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2sypvkvw2e"
 ---
 
 ## Introduction

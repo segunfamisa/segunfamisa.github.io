@@ -3,13 +3,14 @@ layout: post
 title: Remote config with Firebase
 date: 2016-06-13 06:05:30
 description: Update your app without updating your app
+slug: "firebase-remote-config"
 permalink: "/posts/firebase-remote-config"
 tags: [android, firebase, remote config]
 excerpt: Learn how to update your app without updating your app.
 twitter_card_image: "/images/firebase-icon.png"
 comments: true
 header_image: /images/firebase-icon.png
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of4izdg2t"
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syp6lgl2u"
 ---
 
 I've probably said this countless times, that Firebase is one of the most exciting
