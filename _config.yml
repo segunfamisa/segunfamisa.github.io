@@ -1,35 +1,69 @@
-#-------------------------------
-# General Site Settings
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://segunfamisa.com" # the base hostname & protocol for your site, e.g. http://example.com
+title: Segun Famisa
+email:
+description: >-
+  Personal blog for Segun Famisa.
+url: "https://segunfamisa.com"
+baseurl: ""
+lang: en
+timezone: Europe/Berlin
 
+author:
+  name: Segun Famisa
 
-#-------------------------------
-# Build Settings
-markdown: kramdown
-permalink: /:title
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+seo:
+  locale: en_US
+  twitter:
+  image:
 
-paginate: 20
-paginate_path: "/posts/page/:num"
+atproto:
+  enabled: true
+  handle: segunfamisa.com
+  did: did:plc:a5mekodp4afxadlpr4hp2wci
+  profile_url:
 
-# Pages Path
-defaults:
-  - scope:
-      path: '_pages'
-    values:
-      permalink: /:basename:output_ext
-  - scope:
-      path: '_posts'
-    values:
-      permalink: /posts/:slug
+standard_site:
+  enabled: true
+  publication_at_uri: at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.publication/3mm2oa7vz5327
 
-include:
-  - _pages
-  - .well-known
+nav:
+  - title: home
+    url: /
+  - title: posts
+    url: /posts/
+  - title: about
+    url: /about/
 
-sass:
-  sass_dir: _sass
-  style: compressed
+social:
+  - title: github
+    url: https://github.com/segunfamisa
+  - title: bluesky
+    url: https://bsky.app/profile/did:plc:a5mekodp4afxadlpr4hp2wci
+  - title: unsplash
+    url: https://unsplash.com/segunfamisa
+  # - title: rss
+    # url: /feed.xml
+
+home:
+  recent_posts: 3
+
+tag_pages:
+  enabled: true
+  show_in_nav: false
+
+search:
+  enabled: true
+  modal: true
+  show_in_nav: true
+  shortcut: true
+  json_path: /search.json
+  limit: 8
+  library_url: https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js
+
+permalink: /posts/:slug
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - archive

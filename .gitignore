@@ -1,4 +1,6 @@
-_site
-.sass-cache
-
+_site/
+.jekyll-cache/
+.sass-cache/
+node_modules/
+.DS_Store
 .sequoia-state.json

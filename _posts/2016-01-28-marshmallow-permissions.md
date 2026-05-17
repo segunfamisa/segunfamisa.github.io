@@ -7,9 +7,8 @@ slug: marshmallow-permissions
 permalink: /posts/marshmallow-permissions
 tags: [android, tips]
 excerpt: "Quick update on using the new runtime permissions on Android 6.0 (Marshmallow)"
-twitter_card_image: /images/android-marshmallow.png
-comments: true
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syqo5fl25"
+image: /images/android-marshmallow.png
+standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syqo5fl25"
 ---
 
 <p align="center">

@@ -6,11 +6,10 @@ description: Easily jump through and analyze stack traces in Android Studio
 excerpt: "Easily jump through and analyze stack traces in Android Studio"
 slug: analyze-stack-trace-in-android-studio
 permalink: /posts/analyze-stack-trace-in-android-studio
-comments: true
-twitter_small_card_image: /images/android-studio-icon.png
+image: /images/android-studio-icon.png
 header_image: /images/android-studio-icon.png
 tags: [android studio, tutorial, tips]
-atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syj2sft2t"
+standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syj2sft2t"
 ---
 
 # Introduction
