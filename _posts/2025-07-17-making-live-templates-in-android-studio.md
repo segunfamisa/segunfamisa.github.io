@@ -6,6 +6,7 @@ permalink: /posts/android-studio-live-templates
 excerpt: Notes about my favourite Android Studio live template
 date: 2025-07-17 07:00:00 +0100
 tags: [android, android studio, tooling]
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oewmqpg2p"
 ---
 
 _If you are already familiar with live templates, feel free to skip to [the live template for kotlin tests](#live-template-for-kotlin-tests)_

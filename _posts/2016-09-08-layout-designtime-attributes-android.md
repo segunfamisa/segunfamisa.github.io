@@ -9,6 +9,7 @@ excerpt: Android Studio tip on using designtime attributes to preview layout des
 comments: true
 twitter_card_image: "/images/android-studio-icon.png"
 header_image: /images/android-studio-icon.png
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of33jmo27"
 ---
 
 This is a short tip for Android Studio users. Many people know this, but I thought to still

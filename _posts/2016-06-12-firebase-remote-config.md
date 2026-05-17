@@ -9,6 +9,7 @@ excerpt: Learn how to update your app without updating your app.
 twitter_card_image: "/images/firebase-icon.png"
 comments: true
 header_image: /images/firebase-icon.png
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of4izdg2t"
 ---
 
 I've probably said this countless times, that Firebase is one of the most exciting

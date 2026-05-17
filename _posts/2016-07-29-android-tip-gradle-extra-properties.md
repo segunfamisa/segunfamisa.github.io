@@ -9,6 +9,7 @@ excerpt: Android tip on how to use gradle extra properties to manage dependency 
 comments: true
 twitter_card_image: "/images/gradle-as.png"
 header_image: /images/gradle-as.png
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of3mqw42y"
 ---
 
 This is yet another tip you can use in improving your Android development experience

@@ -9,6 +9,7 @@ comments: true
 twitter_small_card_image: /images/android-studio-icon.png
 header_image: /images/android-studio-icon.png
 tags: [android studio, tips, debuggger, adb]
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oey7g432t"
 ---
 
 Recently, I had to debug a deeplink problem that happens only on fresh app start-up. I was particularly
