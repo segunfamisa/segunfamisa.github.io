@@ -338,9 +338,29 @@ blockquote {
 .social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 28px;
+  gap: 0 0.55rem;
   margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
   font-size: 1.05rem;
+}
+
+.social-links span {
+  color: var(--muted);
+}
+
+.social-links a {
+  color: var(--content-link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+}
+
+.social-links a + a::before {
+  content: "·";
+  margin-right: 0.55rem;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-block;
 }
 
 .recent-list {
