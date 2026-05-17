@@ -7,9 +7,9 @@ class: home
 
 # Segun Famisa
 
-I build software, write about engineering, and keep notes on the internet.
+Hi 👋🏾 I'm Segun.
 
-I am interested in thoughtful tools, Android, developer experience, and the small design choices that make technology feel easier to live with.
+I build software, write about engineering, and I'm based in Berlin.
 
 {% if site.posts.size > 0 %}
 ## Recent

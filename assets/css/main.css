@@ -463,6 +463,7 @@ blockquote {
   line-height: 1.52;
 }
 
+.about a:not(.heading-link),
 .post-content a:not(.heading-link) {
   color: var(--content-link);
   text-decoration: underline;
