@@ -26,7 +26,8 @@ I build software, write about engineering, and I'm based in Berlin.
 {% endif %}
 
 <nav class="social-links" aria-label="Social links">
+  <span>elsewhere:</span>
   {% for item in site.social %}
-    <a href="{{ item.url | relative_url }}">↗ {{ item.title }}</a>
+    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
   {% endfor %}
 </nav>
