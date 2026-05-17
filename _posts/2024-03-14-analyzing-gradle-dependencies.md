@@ -7,6 +7,7 @@ permalink: /posts/analyze-gradle-dependencies
 excerpt: How to analyze your Gradle dependencies
 comments: false
 tags: [gradle, tutorial, tips]
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oewv3p72n"
 ---
 
 > _Featured in [Android Weekly #614](https://androidweekly.net/issues/issue-614/) and [Kotlin Weekly #398](https://mailchi.mp/kotlinweekly/kotlin-weekly-398)_

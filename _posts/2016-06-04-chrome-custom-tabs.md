@@ -9,6 +9,7 @@ excerpt: Tutorial on how to use chrome custom tabs in Android.
 twitter_card_image: "/images/chrome-logo.png"
 comments: true
 header_image: /images/chrome-logo.png
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of5fgcg2p"
 ---
 
 ## Introduction

@@ -9,6 +9,7 @@ excerpt: Tutorial on how to implement the new bottom navigation view with the su
 comments: true
 twitter_small_card_image: /images/android.jpg
 header_image: /images/android.jpg
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oez6kh627"
 ---
 
 Sometimes in March 2016, [Luke Wroblewski announced](https://twitter.com/lukew/status/709580252830273537) that the

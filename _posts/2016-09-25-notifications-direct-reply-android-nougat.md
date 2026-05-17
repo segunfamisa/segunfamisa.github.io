@@ -9,6 +9,7 @@ excerpt: Tutorial on how to implement notifications with direct reply in Android
 comments: true
 twitter_card_image: "/images/android-nougat-banner.png"
 header_image: /images/android-nougat-banner.png
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of25wro2p"
 ---
 
 # Introduction

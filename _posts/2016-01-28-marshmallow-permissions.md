@@ -8,6 +8,7 @@ tags: [android, tips]
 excerpt: "Quick update on using the new runtime permissions on Android 6.0 (Marshmallow)"
 twitter_card_image: /images/android-marshmallow.png
 comments: true
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2of64wgx2i"
 ---
 
 <p align="center">

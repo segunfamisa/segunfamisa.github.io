@@ -7,6 +7,7 @@ permalink: /posts/selectively-run-android-ui-tests
 excerpt: Notes about selectively running instrumentation tests on Android
 comments: false
 tags: [android, gradle, tutorial, tips]
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oewqxhw2p"
 ---
 
 ## Intro

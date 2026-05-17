@@ -9,6 +9,7 @@ comments: true
 twitter_small_card_image: /images/android-studio-icon.png
 header_image: /images/android-studio-icon.png
 tags: [android studio, tutorial, tips]
+atUri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2oexd25o27"
 ---
 
 # Introduction
