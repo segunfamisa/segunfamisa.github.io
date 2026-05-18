@@ -8,7 +8,7 @@ slug: sample-data-with-android-studio
 permalink: /posts/sample-data-with-android-studio
 image: /images/android-studio-icon.png
 header_image: /images/android-studio-icon.png
-tags: [android studio, tutorial, tips, layout preview]
+tags: [android, tutorial]
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syl2qow2c"
 ---
 

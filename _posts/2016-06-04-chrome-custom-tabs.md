@@ -5,7 +5,7 @@ date: 2016-06-04 08:05:30
 description: Tutorial on how to use chrome custom tabs in Android.
 slug: "chrome-custom-tabs"
 permalink: "/posts/chrome-custom-tabs"
-tags: [android, chrome, custom tabs, chrome custom tabs]
+tags: [android]
 excerpt: Tutorial on how to use chrome custom tabs in Android.
 image: "/images/chrome-logo.png"
 header_image: /images/chrome-logo.png

@@ -5,7 +5,7 @@ date: 2016-05-26 12:05:30
 description: Exploring the new crash reporting feature of Firebase
 slug: "firebase-crash-reporting"
 permalink: "/posts/firebase-crash-reporting"
-tags: [android, firebase, crash reporting]
+tags: [android, firebase]
 excerpt: Exploring the new crash reporting feature of Firebase
 image: "/images/firebase-icon.png"
 published: true

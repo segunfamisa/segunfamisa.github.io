@@ -6,7 +6,7 @@ description: Strong opinions about AI "tells"
 permalink: /posts/no-you-cant-tell-it-was-written-by-ai
 excerpt: Strong opinions about AI "tells"
 date: 2026-02-05 07:00:00 +0100
-tags: [ai, non-tech]
+tags: [ai, personal]
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syi3q6j2t"
 ---
 

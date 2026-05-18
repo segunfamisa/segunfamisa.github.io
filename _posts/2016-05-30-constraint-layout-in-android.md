@@ -5,7 +5,7 @@ date: 2016-05-30 11:05:30
 description: Quick intro to the new layout editor and ConstraintLayout in Android
 slug: "constraint-layout-in-android"
 permalink: "/posts/constraint-layout-in-android"
-tags: [android, layouts, constraint layout, android studio]
+tags: [android]
 excerpt: Quick intro to the new layout editor and ConstraintLayout in Android
 image: "/images/constraintlayout-header.png"
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syqgct727"

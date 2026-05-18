@@ -6,7 +6,7 @@ slug: exploring-custom-text-rendering-in-compose
 permalink: /posts/exploring-custom-text-rendering-in-compose
 excerpt: Notes from exploring custom text rendering in Jetpack Compose
 date: 2026-01-11 07:00:00 +0100
-tags: [android, jetpack compose]
+tags: [android, jetpack-compose]
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syia2lo26"
 ---
 
