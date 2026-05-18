@@ -8,7 +8,7 @@ slug: analyze-stack-trace-in-android-studio
 permalink: /posts/analyze-stack-trace-in-android-studio
 image: /images/android-studio-icon.png
 header_image: /images/android-studio-icon.png
-tags: [android, tutorial]
+tags: [android]
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syj2sft2t"
 ---
 

@@ -5,7 +5,7 @@ date: 2016-09-25 08:42:45
 description: Tutorial on how to implement notifications with direct reply in Android N
 slug: "notifications-direct-reply-android-nougat"
 permalink: "/posts/notifications-direct-reply-android-nougat"
-tags: [android, tutorial]
+tags: [android]
 excerpt: Tutorial on how to implement notifications with direct reply in Android N
 image: "/images/android-nougat-banner.png"
 header_image: /images/android-nougat-banner.png
