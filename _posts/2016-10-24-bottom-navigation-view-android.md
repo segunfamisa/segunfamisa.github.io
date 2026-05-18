@@ -5,7 +5,7 @@ date: 2016-10-24 08:42:45
 description: Tutorial on how to implement the new bottom navigation view with the support library
 slug: "bottom-navigation-view-android"
 permalink: "/posts/bottom-navigation-view-android"
-tags: [android, android studio, tutorial, material design, support library]
+tags: [android, tutorial]
 excerpt: Tutorial on how to implement the new bottom navigation view with the support library
 image: /images/android.jpg
 header_image: /images/android.jpg

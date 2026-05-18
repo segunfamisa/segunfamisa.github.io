@@ -5,7 +5,7 @@ date: 2016-06-13 06:05:30
 description: Update your app without updating your app
 slug: "firebase-remote-config"
 permalink: "/posts/firebase-remote-config"
-tags: [android, firebase, remote config]
+tags: [android, firebase]
 excerpt: Learn how to update your app without updating your app.
 image: "/images/firebase-icon.png"
 header_image: /images/firebase-icon.png

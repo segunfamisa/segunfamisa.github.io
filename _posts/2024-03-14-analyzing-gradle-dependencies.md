@@ -6,7 +6,7 @@ description: How to analyze your Gradle dependencies
 slug: analyze-gradle-dependencies
 permalink: /posts/analyze-gradle-dependencies
 excerpt: How to analyze your Gradle dependencies
-tags: [gradle, tutorial, tips]
+tags: [android, gradle, tutorial]
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syimuyz2t"
 ---
 

@@ -8,7 +8,7 @@ slug: android-debugging-set-debug-app
 permalink: /posts/android-debugging-set-debug-app
 image: /images/android-studio-icon.png
 header_image: /images/android-studio-icon.png
-tags: [android studio, tips, debuggger, adb]
+tags: [android]
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syjuqcy2y"
 ---
 

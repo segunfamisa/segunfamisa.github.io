@@ -5,7 +5,7 @@ date: 2017-09-04 12:00:00
 description: Exploring how to implement custom fonts on Android by backporting fonts in XML using the support library
 slug: "custom-fonts-with-android-support-library"
 permalink: "/posts/custom-fonts-with-android-support-library"
-tags: [android, tutorial, fonts, support library, oreo]
+tags: [android, tutorial]
 excerpt: Exploring how to implement custom fonts on Android by backporting fonts in XML using the support library
 image: /images/android.jpg
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2sylcgij2n"

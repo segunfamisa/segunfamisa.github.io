@@ -6,7 +6,7 @@ slu: android-studio-live-templates
 permalink: /posts/android-studio-live-templates
 excerpt: Notes about my favourite Android Studio live template
 date: 2025-07-17 07:00:00 +0100
-tags: [android, android studio, tooling]
+tags: [android]
 standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mm2syieaq32t"
 ---
 
