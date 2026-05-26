@@ -1,0 +1,401 @@
+<dialog id="photo-lightbox" class="lightbox-modal">
+  <div class="lightbox-container">
+    
+    <!-- Top Bar Controls -->
+    <header class="lightbox-header">
+      <div class="lightbox-title-area">
+        <h2 id="modal-photo-title" class="lightbox-title">Photo Title</h2>
+        <div class="lightbox-meta">
+          <span id="modal-photo-location" class="photo-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="location-text">Location</span>
+          </span>
+          <span id="modal-photo-date" class="mono">Published Date</span>
+        </div>
+      </div>
+      <div class="lightbox-actions">
+        <a id="modal-download-link" href="#" download class="modal-download-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          download
+        </a>
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          close
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Image Display -->
+    <div class="lightbox-body">
+      <button id="modal-prev-btn" class="lightbox-nav-btn lightbox-nav-prev" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      
+      <div class="lightbox-img-wrapper">
+        <img id="modal-photo-img" class="lightbox-image" src="" alt="Zoomed view of photo">
+      </div>
+      
+      <button id="modal-next-btn" class="lightbox-nav-btn lightbox-nav-next" aria-label="Next photo">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
+    <!-- Metadata Panel -->
+    <section class="lightbox-info-panel" aria-label="Photo Metadata">
+      <div class="lightbox-info-grid">
+        
+        <!-- Description -->
+        <div class="photo-description-pane">
+          <h3 class="exif-title">Description</h3>
+          <p id="modal-photo-desc">Detailed photo description goes here...</p>
+          <div id="modal-attribution" style="margin-top: 12px; margin-bottom: 12px; font-size: var(--text-sm); color: var(--muted); display: none;">
+            Photo by <a id="modal-author-link" href="#" target="_blank" rel="noopener" style="color: var(--content-link); text-decoration: underline; font-weight: 500;">Author</a> on <a id="modal-unsplash-link" href="#" target="_blank" rel="noopener" style="color: var(--content-link); text-decoration: underline; font-weight: 500;">Unsplash</a>
+          </div>
+          <div id="modal-photo-tags" class="photo-tags">
+            <!-- Dynamic tags list -->
+          </div>
+        </div>
+
+        <!-- EXIF Specs -->
+        <div class="exif-pane">
+          <h3 class="exif-title">Camera Specifications</h3>
+          <div class="exif-grid">
+            <div class="exif-item">
+              <span class="exif-label">Camera</span>
+              <span id="modal-exif-camera" class="exif-value">--</span>
+            </div>
+            <div class="exif-item">
+              <span class="exif-label">Lens</span>
+              <span id="modal-exif-lens" class="exif-value">--</span>
+            </div>
+            <div class="exif-item">
+              <span class="exif-label">Aperture</span>
+              <span id="modal-exif-aperture" class="exif-value">--</span>
+            </div>
+            <div class="exif-item">
+              <span class="exif-label">Shutter Speed</span>
+              <span id="modal-exif-shutter" class="exif-value">--</span>
+            </div>
+            <div class="exif-item">
+              <span class="exif-label">ISO</span>
+              <span id="modal-exif-iso" class="exif-value">--</span>
+            </div>
+            <div class="exif-item">
+              <span class="exif-label">Focal Length</span>
+              <span id="modal-exif-focal" class="exif-value">--</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </div>
+</dialog>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initTabs();
+  initLightbox();
+});
+
+/**
+ * 1. TABS SWITCHER
+ */
+function initTabs() {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  
+  if (tabButtons.length === 0) return;
+
+  // Restore previous tab selection from sessionStorage if present
+  const activeTabId = sessionStorage.getItem('activeTab') || 'photos-panel';
+  
+  // Set initial states
+  setActiveTab(activeTabId);
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetPanelId = btn.getAttribute('data-tab');
+      setActiveTab(targetPanelId);
+      sessionStorage.setItem('activeTab', targetPanelId);
+    });
+  });
+
+  function setActiveTab(panelId) {
+    tabButtons.forEach(btn => {
+      if (btn.getAttribute('data-tab') === panelId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    tabPanels.forEach(panel => {
+      if (panel.id === panelId) {
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+      }
+    });
+  }
+}
+
+/**
+ * 2. LIGHTBOX DIALOG LIGHTBOX & DEEP LINKING
+ */
+function initLightbox() {
+  const dialog = document.getElementById('photo-lightbox');
+  const closeBtn = document.getElementById('modal-close-btn');
+  const prevBtn = document.getElementById('modal-prev-btn');
+  const nextBtn = document.getElementById('modal-next-btn');
+  
+  if (!dialog) return;
+
+  // Cache modal elements
+  const modalImg = document.getElementById('modal-photo-img');
+  const modalTitle = document.getElementById('modal-photo-title');
+  const modalDesc = document.getElementById('modal-photo-desc');
+  const modalLocation = document.getElementById('modal-photo-location');
+  const modalDate = document.getElementById('modal-photo-date');
+  const modalTags = document.getElementById('modal-photo-tags');
+  const modalDownload = document.getElementById('modal-download-link');
+  const modalAttribution = document.getElementById('modal-attribution');
+  const modalAuthorLink = document.getElementById('modal-author-link');
+  const modalUnsplashLink = document.getElementById('modal-unsplash-link');
+  
+  // EXIF Elements
+  const exifCamera = document.getElementById('modal-exif-camera');
+  const exifLens = document.getElementById('modal-exif-lens');
+  const exifAperture = document.getElementById('modal-exif-aperture');
+  const exifShutter = document.getElementById('modal-exif-shutter');
+  const exifIso = document.getElementById('modal-exif-iso');
+  const exifFocal = document.getElementById('modal-exif-focal');
+
+  let currentCard = null;
+
+  // Set up click listeners for all photo cards (delegated on document for dynamism)
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.photo-card');
+    if (card) {
+      e.preventDefault(); // Stop fallback navigation if JS is enabled
+      openLightbox(card);
+    }
+  });
+
+  // Close modal click
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      closeLightbox();
+    });
+  }
+
+  // Handle native close (e.g. Escape key) — clean up hash & scroll lock
+  dialog.addEventListener('close', () => {
+    document.body.style.overflow = '';
+    currentCard = null;
+    if (window.location.hash) {
+      history.pushState(null, null, window.location.pathname + window.location.search);
+    }
+  });
+
+  // Close when clicking outside content (on the backdrop)
+  dialog.addEventListener('click', (event) => {
+    const rect = dialog.getBoundingClientRect();
+    const isInDialog = (
+      rect.top <= event.clientY &&
+      event.clientY <= rect.top + rect.height &&
+      rect.left <= event.clientX &&
+      event.clientX <= rect.left + rect.width
+    );
+    if (!isInDialog) {
+      closeLightbox();
+    }
+  });
+
+  // Navigate prev/next
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => navigate(-1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => navigate(1));
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!dialog.open) return;
+    if (e.key === 'ArrowRight') {
+      navigate(1);
+    } else if (e.key === 'ArrowLeft') {
+      navigate(-1);
+    }
+  });
+
+  // Handle URL deep links on load
+  handleHashUrl();
+
+  // Listen to hash changes (e.g. forward/back browser buttons)
+  window.addEventListener('hashchange', handleHashUrl);
+
+  function getActiveGridCards() {
+    // If we're inside a tab panel, find cards in the active panel. Otherwise, get all cards.
+    const activePanel = document.querySelector('.tab-panel.active');
+    if (activePanel) {
+      return Array.from(activePanel.querySelectorAll('.photo-card'));
+    }
+    // Fallback/standard for pages without tabs (like Album Detail)
+    return Array.from(document.querySelectorAll('.photo-card'));
+  }
+
+  function openLightbox(card) {
+    currentCard = card;
+    const slug = card.getAttribute('data-slug');
+    const title = card.getAttribute('data-title');
+    const desc = card.getAttribute('data-desc');
+    const imgUrl = card.getAttribute('data-img-url');
+    const originalUrl = card.getAttribute('data-original-url');
+    const camera = card.getAttribute('data-camera');
+    const lens = card.getAttribute('data-lens');
+    const aperture = card.getAttribute('data-aperture');
+    const shutter = card.getAttribute('data-shutter');
+    const iso = card.getAttribute('data-iso');
+    const focal = card.getAttribute('data-focal');
+    const location = card.getAttribute('data-location');
+    const date = card.getAttribute('data-date');
+    const tagsString = card.getAttribute('data-tags');
+
+    // Populate standard details
+    modalImg.src = imgUrl;
+    modalImg.alt = title;
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc || "No description provided.";
+    modalDate.textContent = date || "";
+    modalDownload.href = originalUrl;
+
+    // Attribution setup
+    const authorName = card.getAttribute('data-author-name');
+    const authorLink = card.getAttribute('data-author-link');
+    const unsplashId = card.getAttribute('data-unsplash-id');
+
+    if (unsplashId) {
+      modalAttribution.style.display = 'block';
+      modalAuthorLink.textContent = authorName || "Segun Famisa";
+      modalAuthorLink.href = authorLink || "https://unsplash.com/@segunfamisa";
+      modalUnsplashLink.href = `https://unsplash.com/photos/${unsplashId}`;
+    } else {
+      modalAttribution.style.display = 'none';
+    }
+
+    // Location setup
+    if (location) {
+      modalLocation.style.display = 'inline-flex';
+      modalLocation.querySelector('.location-text').textContent = location;
+    } else {
+      modalLocation.style.display = 'none';
+    }
+
+    // EXIF setup
+    exifCamera.textContent = camera || "--";
+    exifLens.textContent = lens || "--";
+    exifAperture.textContent = aperture || "--";
+    exifShutter.textContent = shutter || "--";
+    exifIso.textContent = iso || "--";
+    exifFocal.textContent = focal || "--";
+
+    // Tags setup
+    modalTags.innerHTML = '';
+    if (tagsString) {
+      const tags = tagsString.split(',').map(t => t.trim()).filter(t => t.length > 0);
+      tags.forEach(tag => {
+        const badge = document.createElement('span');
+        badge.className = 'tag-badge';
+        badge.textContent = tag;
+        modalTags.appendChild(badge);
+      });
+    }
+
+    // Update navigation button visibility
+    updateNavButtons();
+
+    // Open native modal dialog
+    if (!dialog.open) {
+      dialog.showModal();
+      document.body.style.overflow = 'hidden'; // Lock background scroll
+    }
+
+    // Update URL hash without jumping page
+    if (window.location.hash !== `#photo-${slug}`) {
+      history.pushState(null, null, `#photo-${slug}`);
+    }
+  }
+
+  function closeLightbox() {
+    if (dialog.open) {
+      dialog.close();
+      document.body.style.overflow = ''; // Restore background scroll
+      currentCard = null;
+      
+      // Clean hash from URL
+      if (window.location.hash) {
+        history.pushState(null, null, window.location.pathname + window.location.search);
+      }
+    }
+  }
+
+  function navigate(direction) {
+    const cards = getActiveGridCards();
+    if (cards.length <= 1 || !currentCard) return;
+
+    const currentIndex = cards.indexOf(currentCard);
+    let newIndex = currentIndex + direction;
+
+    // Wrap around navigation
+    if (newIndex >= cards.length) {
+      newIndex = 0;
+    } else if (newIndex < 0) {
+      newIndex = cards.length - 1;
+    }
+
+    openLightbox(cards[newIndex]);
+  }
+
+  function updateNavButtons() {
+    const cards = getActiveGridCards();
+    if (cards.length <= 1) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      return;
+    }
+    prevBtn.style.display = 'flex';
+    nextBtn.style.display = 'flex';
+  }
+
+  function handleHashUrl() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#photo-')) {
+      const slug = hash.replace('#photo-', '');
+      const targetCard = document.querySelector(`.photo-card[data-slug="${slug}"]`);
+      if (targetCard) {
+        // If the user lands on the site or clicks a link, switch to Photos tab
+        const photosTabBtn = document.querySelector('.tab-btn[data-tab="photos-panel"]');
+        if (photosTabBtn && !photosTabBtn.classList.contains('active')) {
+          photosTabBtn.click();
+        }
+        openLightbox(targetCard);
+      }
+    } else {
+      // If hash was deleted, close lightbox
+      closeLightbox();
+    }
+  }
+}
+</script>

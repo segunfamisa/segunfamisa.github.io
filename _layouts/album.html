@@ -1,0 +1,108 @@
+---
+layout: default
+class: photography-layout
+---
+<div class="site-container">
+  
+  <!-- Back Link & Header -->
+  <div style="padding: var(--space-xl) 0 var(--space-md);">
+    <a href="{{ '/photos/' | relative_url }}" style="display: inline-flex; align-items: center; gap: 8px; font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: var(--space-sm);">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      back to photos
+    </a>
+    
+    <h1 class="profile-name" style="font-size: var(--text-4xl); margin-top: var(--space-2xs); margin-bottom: 4px;">{{ page.title }}</h1>
+    <p class="profile-bio" style="font-size: var(--text-lg); margin-top: 4px; margin-bottom: var(--space-2xs);">{{ page.description }}</p>
+    
+    {% assign album_photos = site.photos | where: "album", page.slug | sort: "date" | reverse %}
+    <p class="mono" style="font-size: var(--text-xs); color: var(--text-secondary);">
+      Published: {{ page.date | date: "%B %Y" }} &bull; {{ album_photos.size }} photos
+    </p>
+  </div>
+
+  <!-- Masonry Grid for Photos in this Album -->
+  <div class="masonry-grid" style="margin-top: var(--space-lg);">
+    {% for photo in album_photos %}
+      {% if photo.unsplash_id %}
+        {% assign img_url = "https://unsplash.com/photos/" | append: photo.unsplash_id | append: "/download?auto=format&fit=crop&w=800&q=80" %}
+        {% assign original_url = "https://unsplash.com/photos/" | append: photo.unsplash_id | append: "/download?auto=format&fit=max&w=1600&q=85" %}
+      {% else %}
+        {% assign img_url = photo.image | relative_url %}
+        {% assign original_url = photo.image | relative_url %}
+      {% endif %}
+      <div class="photo-card" 
+           data-slug="{{ photo.slug }}"
+           data-title="{{ photo.title | escape }}" 
+           data-desc="{{ photo.description | escape }}" 
+           data-img-url="{{ img_url }}" 
+           data-original-url="{{ original_url }}"
+           data-camera="{{ photo.camera | default: '' | escape }}"
+           data-lens="{{ photo.lens | default: '' | escape }}"
+           data-aperture="{{ photo.aperture | default: '' | escape }}"
+           data-shutter="{{ photo.shutter | default: '' | escape }}"
+           data-iso="{{ photo.iso | default: '' | escape }}"
+           data-focal="{{ photo.focal | default: '' | escape }}"
+           data-location="{{ photo.location | default: '' | escape }}"
+           data-date="{{ photo.date | date: '%B %d, %Y' }}"
+           data-tags="{{ photo.tags | join: ',' | escape }}"
+           data-unsplash-id="{{ photo.unsplash_id }}"
+           data-author-name="Segun Famisa"
+           data-author-link="https://unsplash.com/@segunfamisa">
+        
+        <img src="{{ img_url }}" 
+             alt="{{ photo.title | escape }}" 
+             {% if forloop.first %}
+               fetchpriority="high"
+             {% else %}
+               loading="lazy"
+             {% endif %}>
+
+        <div class="photo-overlay">
+          <div class="photo-overlay-content">
+            <div class="photo-overlay-info">
+              <span class="photo-title">{{ photo.title }}</span>
+              {% if photo.location %}
+              <span class="photo-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                {{ photo.location }}
+              </span>
+              {% endif %}
+            </div>
+            {% if photo.camera %}
+            <div class="photo-camera-icon" title="{{ photo.camera }}">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <p class="mono" style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);">No photos in this album yet.</p>
+    {% endfor %}
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.photo-card').forEach(card => {
+  const img = card.querySelector('img');
+  if (!img) return;
+  if (img.complete && img.naturalHeight > 0) {
+    card.classList.add('loaded');
+  } else {
+    img.addEventListener('load', () => card.classList.add('loaded'), { once: true });
+    img.addEventListener('error', () => card.classList.add('loaded'), { once: true });
+  }
+});
+</script>
+
+{% include photography_lightbox.html %}

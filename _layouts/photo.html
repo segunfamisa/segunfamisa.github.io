@@ -1,0 +1,126 @@
+---
+layout: default
+class: photography-layout
+{% if page.unsplash_id %}
+  {% assign img_url = "https://unsplash.com/photos/" | append: page.unsplash_id | append: "/download?auto=format&fit=max&w=1600&q=85" %}
+  {% assign download_url = "https://unsplash.com/photos/" | append: page.unsplash_id | append: "/download?force=true" %}
+{% else %}
+  {% assign img_url = page.image | relative_url %}
+  {% assign download_url = page.image | relative_url %}
+{% endif %}
+<div class="site-container">
+  
+  <!-- Back Link & Header -->
+  <div style="padding: var(--space-xl) 0 var(--space-md);">
+    {% assign album = site.albums | where: "slug", page.album | first %}
+    {% if album %}
+    <a href="{{ album.url | relative_url }}" style="display: inline-flex; align-items: center; gap: 8px; font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: var(--space-sm);">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      back to {{ album.title }}
+    </a>
+    {% else %}
+    <a href="{{ '/photos/' | relative_url }}" style="display: inline-flex; align-items: center; gap: 8px; font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: var(--space-sm);">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      back to photos
+    </a>
+    {% endif %}
+    
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--space-sm);">
+      <div>
+        <h1 class="profile-name" style="font-size: var(--text-3xl); margin-top: var(--space-2xs); margin-bottom: 4px;">{{ page.title }}</h1>
+        <div class="lightbox-meta" style="margin-top: 4px;">
+          {% if page.location %}
+          <span class="photo-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            {{ page.location }}
+          </span>
+          {% endif %}
+          <span class="mono">{{ page.date | date: "%B %d, %Y" }}</span>
+        </div>
+      </div>
+      
+      <div>
+        <a href="{{ download_url }}" download class="modal-download-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          download image
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Photo Display -->
+  <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--space-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-xl);">
+    <img src="{{ img_url }}" alt="{{ page.title | escape }}" fetchpriority="high" style="max-height: 75vh; width: auto; max-width: 100%; border-radius: var(--radius-sm); box-shadow: var(--shadow);">
+  </div>
+
+  <!-- Info Grid -->
+  <section style="border-top: 1px solid var(--border-color); padding-top: var(--space-xl); margin-bottom: var(--space-2xl);">
+    <div class="lightbox-info-grid">
+      
+      <!-- Description -->
+      <div class="photo-description-pane">
+        <h3 class="exif-title">Description</h3>
+        <p>{{ page.description }}</p>
+        {% if page.unsplash_id %}
+        <div class="photo-attribution" style="margin-top: var(--space-xs); font-size: var(--text-sm); color: var(--muted);">
+          Photo by <a href="https://unsplash.com/@segunfamisa" target="_blank" rel="noopener" style="color: var(--content-link); text-decoration: underline; font-weight: 500;">Segun Famisa</a> on <a href="https://unsplash.com/photos/{{ page.unsplash_id }}" target="_blank" rel="noopener" style="color: var(--content-link); text-decoration: underline; font-weight: 500;">Unsplash</a>
+        </div>
+        {% endif %}
+        
+        {% if page.tags %}
+        <div class="photo-tags">
+          {% for tag in page.tags %}
+            <span class="tag-badge">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- EXIF Details -->
+      <div class="exif-pane">
+        <h3 class="exif-title">Camera Specifications</h3>
+        <div class="exif-grid">
+          <div class="exif-item">
+            <span class="exif-label">Camera</span>
+            <span class="exif-value">{{ page.camera | default: "--" }}</span>
+          </div>
+          <div class="exif-item">
+            <span class="exif-label">Lens</span>
+            <span class="exif-value">{{ page.lens | default: "--" }}</span>
+          </div>
+          <div class="exif-item">
+            <span class="exif-label">Aperture</span>
+            <span class="exif-value">{{ page.aperture | default: "--" }}</span>
+          </div>
+          <div class="exif-item">
+            <span class="exif-label">Shutter Speed</span>
+            <span class="exif-value">{{ page.shutter | default: "--" }}</span>
+          </div>
+          <div class="exif-item">
+            <span class="exif-label">ISO</span>
+            <span class="exif-value">{{ page.iso | default: "--" }}</span>
+          </div>
+          <div class="exif-item">
+            <span class="exif-label">Focal Length</span>
+            <span class="exif-value">{{ page.focal | default: "--" }}</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</div>

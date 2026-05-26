@@ -1,0 +1,729 @@
+/* Main Photography Section Layout Overrides */
+.content.photography-layout {
+  width: 100%;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  padding: var(--space-xl) 0;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius-round);
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: var(--badge-bg);
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-name {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: var(--space-2xs);
+}
+
+.profile-bio {
+  font-size: var(--text-base);
+  color: var(--muted);
+  max-width: var(--max-width-content);
+  margin-bottom: var(--space-sm);
+  line-height: var(--lh-snug);
+}
+
+.profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin-bottom: var(--space-md);
+}
+
+.profile-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.profile-meta-item svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.profile-socials {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-btn {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+}
+
+.social-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+  background-color: var(--btn-hover);
+}
+
+/* Tabs Navigation */
+.tabs-container {
+  display: flex;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: var(--space-xl);
+  gap: var(--space-lg);
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding: var(--space-sm) 0;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  white-space: nowrap;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  color: var(--text);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text);
+}
+
+.tab-count {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  background-color: var(--badge-bg);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+/* Tab Panels */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Masonry Grid (Photos Tab) */
+.masonry-grid {
+  column-count: 3;
+  column-gap: var(--grid-gap);
+  width: 100%;
+  margin-bottom: var(--space-2xl);
+}
+
+@media (max-width: 1024px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
+
+/* ── Shimmer Loading Animation ── */
+@keyframes shimmer {
+  0% {
+    background-position: -600px 0;
+  }
+  100% {
+    background-position: 600px 0;
+  }
+}
+
+.photo-card {
+  break-inside: avoid;
+  margin-bottom: var(--grid-gap);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-tertiary, rgba(255,255,255,0.06)) 40%,
+    var(--bg-secondary) 80%
+  );
+  background-size: 1200px 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  min-height: 180px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.photo-card.loaded {
+  animation: none;
+  background: var(--bg-secondary);
+  min-height: 0;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.photo-card.loaded img {
+  opacity: 1;
+}
+
+/* Hover Effects (Desktop Only) */
+@media (hover: hover) {
+  .photo-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .photo-card:hover .photo-overlay {
+    opacity: 1;
+  }
+}
+
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%);
+  opacity: 0;
+  z-index: 3; /* Sit above the z-index 2 cover photo */
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-md);
+  pointer-events: none; /* Allows click to pass to card */
+}
+
+.photo-overlay-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.photo-overlay-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.photo-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.photo-location {
+  font-size: var(--text-xs);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.photo-location svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.photo-camera-icon {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-sm);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.photo-camera-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+/* Mobile-Friendly Overlay Fallback */
+@media (max-width: 768px) {
+  .photo-overlay {
+    opacity: 1;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.6) 100%);
+  }
+}
+
+/* Album Card Grid */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: var(--grid-gap);
+  margin-bottom: var(--space-2xl);
+}
+
+@media (max-width: 640px) {
+  .album-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.album-card {
+  overflow: visible; /* Allowed stack layers to peek out */
+  display: block;
+  break-inside: avoid; /* Prevents breaks in masonry */
+  margin-bottom: var(--grid-gap); /* Separation in masonry */
+  cursor: pointer;
+  position: relative;
+}
+
+.album-cover-wrapper {
+  aspect-ratio: 1.5; /* 3:2 aspect ratio matching standard photos */
+  overflow: visible; /* Allowed stack layers to peek out */
+  position: relative;
+  margin: 0; /* Align width exactly with photo cards */
+  background-color: transparent;
+  display: block;
+}
+
+.album-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--rule);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Stack layers behind the cover image */
+.album-cover-wrapper::before,
+.album-cover-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: transform 0.3s ease;
+}
+
+.album-cover-wrapper::before {
+  z-index: 0;
+  transform: rotate(-3deg) translate(-2px, -3px);
+  background-color: color-mix(in srgb, var(--bg-secondary) 95%, #000);
+}
+
+.album-cover-wrapper::after {
+  z-index: 1;
+  transform: rotate(3deg) translate(3px, -1px);
+  background-color: color-mix(in srgb, var(--bg-secondary) 90%, #000);
+}
+
+/* Fanning Hover Animations */
+.album-card:hover .album-cover {
+  transform: scale(1.02) translateY(-2px);
+}
+
+.album-card:hover .album-cover-wrapper::before {
+  transform: rotate(-6deg) translate(-5px, -6px);
+}
+
+.album-card:hover .album-cover-wrapper::after {
+  transform: rotate(6deg) translate(6px, -2px);
+}
+
+/* Trigger photo-overlay visibility on album card hover (desktop only) */
+@media (hover: hover) {
+  .album-card:hover .photo-overlay {
+    opacity: 1;
+  }
+}
+
+/* Placeholder for empty albums */
+.album-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--rule);
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Album Cover Badge Overlay */
+.album-cover-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Hide badge on card hover (since title overlay takes over) */
+.album-card:hover .album-cover-badge {
+  opacity: 0;
+  transform: translateY(-2px);
+}
+
+/* Lightbox Dialog Modal */
+.lightbox-modal {
+  width: min(900px, 92vw);
+  max-height: 88vh;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background-color: var(--modal-bg);
+  color: var(--text);
+  padding: 0;
+  outline: none;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  overflow-y: auto; /* allow modal scrolling if description is long */
+  box-sizing: border-box;
+}
+
+.lightbox-modal::backdrop {
+  background-color: var(--modal-backdrop);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: backdrop-filter 0.3s ease;
+}
+
+.lightbox-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.lightbox-header {
+  height: var(--header-height);
+  padding: 0 var(--space-md);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background);
+  flex-shrink: 0;
+}
+
+.lightbox-title-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin: 0;
+}
+
+.lightbox-meta {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.lightbox-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.modal-close-btn, .modal-download-btn {
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--text);
+  cursor: pointer;
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  transition: all 0.2s;
+  text-decoration: none !important;
+}
+
+.modal-close-btn:hover, .modal-download-btn:hover {
+  background-color: var(--btn-hover);
+  border-color: var(--border-hover);
+}
+
+.lightbox-body {
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background-color: var(--bg-secondary);
+  position: relative;
+}
+
+.lightbox-img-wrapper {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 52vh; /* Balanced size inside the modal card */
+  object-fit: contain;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-sm);
+}
+
+/* Lightbox Navigation Buttons inside modal body */
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.lightbox-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox-nav-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.lightbox-nav-prev {
+  left: var(--space-md);
+}
+
+.lightbox-nav-next {
+  right: var(--space-md);
+}
+
+.lightbox-info-panel {
+  padding: var(--space-lg) var(--space-md);
+  border-top: 1px solid var(--rule);
+  background-color: var(--background);
+  flex-shrink: 0;
+}
+
+.lightbox-info-grid {
+  max-width: var(--max-width-site);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .lightbox-info-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.photo-description-pane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.photo-description-pane p {
+  color: var(--muted);
+  font-size: var(--text-base);
+  margin: 0;
+}
+
+.photo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin-top: var(--space-xs);
+}
+
+.tag-badge {
+  font-size: var(--text-xs);
+  color: var(--badge-text);
+  background-color: var(--badge-bg);
+  padding: 4px var(--space-2xs);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s;
+}
+
+.tag-badge:hover {
+  background-color: var(--rule);
+  color: var(--text);
+}
+
+/* EXIF Details Grid */
+.exif-pane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.exif-title {
+  font-family: var(--font-headline);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin: 0 0 var(--space-3xs);
+}
+
+.exif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: var(--space-sm);
+}
+
+.exif-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.exif-label {
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+
+.exif-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-md);
+    padding: var(--space-lg) 0;
+  }
+  
+  .profile-meta {
+    justify-content: center;
+  }
+
+  .profile-socials {
+    justify-content: center;
+  }
+
+  .lightbox-header {
+    height: auto;
+    padding: var(--space-sm) var(--space-md);
+    flex-direction: column;
+    gap: var(--space-xs);
+    align-items: stretch;
+  }
+
+  .lightbox-actions {
+    justify-content: flex-end;
+  }
+
+  .lightbox-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lightbox-nav-prev {
+    left: var(--space-sm);
+  }
+
+  .lightbox-nav-next {
+    right: var(--space-sm);
+  }
+}

@@ -1,0 +1,26 @@
+/* Photography Typography - Inherited from main site */
+
+:root {
+  /* Fonts - mapped to the site's design tokens */
+  --font-sans: var(--font-body);
+  --font-headline: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+.photography-layout {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+  }
+}

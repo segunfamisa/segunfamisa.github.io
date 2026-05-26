@@ -37,7 +37,7 @@
         </nav>
       </header>
 
-      <main id="content" class="content {{ page.class }}">
+      <main id="content" class="content {{ page.class | default: layout.class }}">
         {{ content }}
       </main>
     </div>
