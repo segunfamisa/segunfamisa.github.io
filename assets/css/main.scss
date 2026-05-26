@@ -1,5 +1,7 @@
 ---
 ---
+@use "sass:meta";
+
 /* Design tokens */
 
 :root {
@@ -995,7 +997,6 @@ blockquote {
   }
 }
 
-@import "photography/type";
-@import "photography/spacing";
-@import "photography/main";
-
+@include meta.load-css("photography/type");
+@include meta.load-css("photography/spacing");
+@include meta.load-css("photography/main");
