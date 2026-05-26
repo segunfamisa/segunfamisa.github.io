@@ -2,7 +2,7 @@
 layout: photo
 title: "Sunlight casts shadows on a stairwell with a red railing."
 date: 2025-04-21 12:35:39
-image: "/assets/images/photos/sunlight-casts-shadows-on-a-stairwell-with-a-red-railing-0HYPzXTb8rw.jpg"
+unsplash_id: "0HYPzXTb8rw"
 description: "Sunlight casts shadows on a stairwell with a red railing."
 camera: "SONY, ILCE-7CM2"
 aperture: "f/4.5"

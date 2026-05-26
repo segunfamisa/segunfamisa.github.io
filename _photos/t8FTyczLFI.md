@@ -2,7 +2,7 @@
 layout: photo
 title: "Untitled"
 date: 2025-04-20 14:11:38
-image: "/assets/images/photos/t8FTyczLFI.jpg"
+unsplash_id: "t8FTycz_LFI"
 location: "Warschauer Straße, Berlin-Friedrichshain-Kreuzberg, Germany"
 camera: "SONY, ILCE-7CM2"
 aperture: "f/5.6"

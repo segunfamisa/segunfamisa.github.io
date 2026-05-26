@@ -2,7 +2,7 @@
 layout: photo
 title: "Wellesley Station, Toronto"
 date: 2025-04-06 22:44:39
-image: "/assets/images/photos/a-subway-train-arrives-at-the-station-platform-SyejyBicYqo.jpg"
+unsplash_id: "SyejyBicYqo"
 location: "Toronto, ON, Canada"
 description: "Wellesley Station, Toronto"
 camera: "SONY, ILCE-7CM2"

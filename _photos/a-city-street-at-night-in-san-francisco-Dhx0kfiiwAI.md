@@ -2,7 +2,7 @@
 layout: photo
 title: "A city street at night in san francisco."
 date: 2025-08-04 22:08:29
-image: "/assets/images/photos/a-city-street-at-night-in-san-francisco-Dhx0kfiiwAI.jpg"
+unsplash_id: "Dhx0kfiiwAI"
 location: "Kearny Street, San Francisco, CA, USA"
 description: "A city street at night in san francisco."
 camera: "SONY, ILCE-7CM2"

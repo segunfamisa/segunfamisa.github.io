@@ -13,8 +13,8 @@ class: photography-layout
     {% for item in feed_items %}
       {% if item.collection == 'photos' %}
         {% if item.unsplash_id %}
-          {% assign img_url = "https://images.unsplash.com/" | append: item.unsplash_id | append: "?auto=format&fit=crop&w=800&q=80" %}
-          {% assign original_url = "https://images.unsplash.com/" | append: item.unsplash_id | append: "?auto=format&fit=max&w=1600&q=85" %}
+          {% assign img_url = "https://unsplash.com/photos/" | append: item.unsplash_id | append: "/download?auto=format&fit=crop&w=800&q=80" %}
+          {% assign original_url = "https://unsplash.com/photos/" | append: item.unsplash_id | append: "/download?auto=format&fit=max&w=1600&q=85" %}
         {% else %}
           {% assign img_url = item.image | relative_url %}
           {% assign original_url = item.image | relative_url %}
@@ -86,7 +86,7 @@ class: photography-layout
           <a href="{{ item.url | relative_url }}" class="album-cover-wrapper">
             {% if cover_photo %}
               {% if cover_photo.unsplash_id %}
-                {% assign cover_img_url = "https://images.unsplash.com/" | append: cover_photo.unsplash_id | append: "?auto=format&fit=crop&w=800&q=80" %}
+                {% assign cover_img_url = "https://unsplash.com/photos/" | append: cover_photo.unsplash_id | append: "/download?auto=format&fit=crop&w=800&q=80" %}
               {% else %}
                 {% assign cover_img_url = cover_photo.image | relative_url %}
               {% endif %}

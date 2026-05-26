@@ -2,7 +2,7 @@
 layout: photo
 title: "Tottenham Court Road Station, London"
 date: 2025-11-24 22:35:06
-image: "/assets/images/photos/a-black-and-white-view-of-a-subway-tunnel-iYsafhfgWPA.jpg"
+unsplash_id: "iYsafhfgWPA"
 location: "Tottenham Court Road Station, London, UK"
 description: "Tottenham Court Road Station, London"
 camera: "SONY, ILCE-7CM2"

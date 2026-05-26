@@ -2,7 +2,7 @@
 layout: photo
 title: "Towers of the oberbaum bridge stand tall in berlin."
 date: 2025-04-20 16:54:53
-image: "/assets/images/photos/towers-of-the-oberbaum-bridge-stand-tall-in-berlin-rFy67Xi87Xg.jpg"
+unsplash_id: "rFy67Xi87Xg"
 location: "Oberbaumbrücke, Berlin-Friedrichshain-Kreuzberg, Germany"
 description: "Towers of the oberbaum bridge stand tall in berlin."
 camera: "SONY, ILCE-7CM2"

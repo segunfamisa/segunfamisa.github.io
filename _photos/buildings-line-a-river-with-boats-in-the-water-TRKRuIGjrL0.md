@@ -2,7 +2,7 @@
 layout: photo
 title: "View from the Oberbaumbrücke."
 date: 2025-04-21 17:04:45
-image: "/assets/images/photos/buildings-line-a-river-with-boats-in-the-water-TRKRuIGjrL0.jpg"
+unsplash_id: "TRKRuIGjrL0"
 location: "Berlin, Germany"
 description: "View from the Oberbaumbrücke."
 camera: "SONY, ILCE-7CM2"

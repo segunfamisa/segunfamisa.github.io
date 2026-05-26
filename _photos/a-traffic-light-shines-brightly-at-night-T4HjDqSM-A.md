@@ -2,7 +2,7 @@
 layout: photo
 title: "Pedestrian traffic light"
 date: 2025-10-26 23:17:59
-image: "/assets/images/photos/a-traffic-light-shines-brightly-at-night-T4HjDqSM-A.jpg"
+unsplash_id: "T4Hj_DqSM-A"
 location: "Toronto, ON, Canada"
 description: "pedestrian traffic light"
 camera: "SONY, ILCE-7CM2"

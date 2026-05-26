@@ -2,7 +2,7 @@
 layout: photo
 title: "Untitled"
 date: 2025-04-27 07:32:05
-image: "/assets/images/photos/ZkMUy2aWrIg.jpg"
+unsplash_id: "ZkMUy2aWrIg"
 location: "Berlin, Germany"
 camera: "SONY, ILCE-7CM2"
 aperture: "f/3.2"

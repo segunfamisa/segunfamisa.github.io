@@ -2,7 +2,7 @@
 layout: photo
 title: "People reflected in a yellow subway window"
 date: 2025-08-30 10:53:25
-image: "/assets/images/photos/people-reflected-in-a-yellow-subway-window-lINSKF7ZyjQ.jpg"
+unsplash_id: "lINSKF7ZyjQ"
 location: "Berlin, Germany"
 description: "People reflected in a yellow subway window"
 camera: "SONY, ILCE-7CM2"

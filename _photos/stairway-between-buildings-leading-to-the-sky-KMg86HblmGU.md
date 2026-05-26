@@ -2,7 +2,7 @@
 layout: photo
 title: "Stairway between buildings, leading to the sky."
 date: 2025-04-13 19:21:51
-image: "/assets/images/photos/stairway-between-buildings-leading-to-the-sky-KMg86HblmGU.jpg"
+unsplash_id: "KMg86HblmGU"
 location: "Toronto, ON, Canada"
 description: "Stairway between buildings, leading to the sky."
 camera: "SONY, ILCE-7CM2"

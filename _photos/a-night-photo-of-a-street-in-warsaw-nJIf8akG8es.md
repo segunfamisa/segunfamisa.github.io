@@ -2,7 +2,7 @@
 layout: photo
 title: "A night photo of a street in warsaw."
 date: 2025-04-21 22:35:08
-image: "/assets/images/photos/a-night-photo-of-a-street-in-warsaw-nJIf8akG8es.jpg"
+unsplash_id: "nJIf8akG8es"
 location: "Warschauer Straße, Berlin-Friedrichshain-Kreuzberg, Germany"
 description: "A night photo of a street in warsaw."
 camera: "SONY, ILCE-7CM2"

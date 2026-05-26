@@ -2,8 +2,8 @@
 layout: default
 class: photography-layout
 {% if page.unsplash_id %}
-  {% assign img_url = "https://images.unsplash.com/" | append: page.unsplash_id | append: "?auto=format&fit=max&w=1600&q=85" %}
-  {% assign download_url = "https://images.unsplash.com/" | append: page.unsplash_id %}
+  {% assign img_url = "https://unsplash.com/photos/" | append: page.unsplash_id | append: "/download?auto=format&fit=max&w=1600&q=85" %}
+  {% assign download_url = "https://unsplash.com/photos/" | append: page.unsplash_id | append: "/download?force=true" %}
 {% else %}
   {% assign img_url = page.image | relative_url %}
   {% assign download_url = page.image | relative_url %}

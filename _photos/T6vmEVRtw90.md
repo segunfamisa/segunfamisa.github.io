@@ -2,7 +2,7 @@
 layout: photo
 title: "Jaguar XK"
 date: 2025-10-24 15:56:23
-image: "/assets/images/photos/T6vmEVRtw90.jpg"
+unsplash_id: "T6vmEVRtw90"
 location: "Toronto, ON, Canada"
 description: "Jaguar XK"
 camera: "SONY, ILCE-7CM2"

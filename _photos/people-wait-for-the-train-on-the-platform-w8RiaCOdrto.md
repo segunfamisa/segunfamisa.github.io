@@ -2,7 +2,7 @@
 layout: photo
 title: "U1/2 train arriving"
 date: 2025-04-11 14:23:25
-image: "/assets/images/photos/people-wait-for-the-train-on-the-platform-w8RiaCOdrto.jpg"
+unsplash_id: "w8RiaCOdrto"
 location: "Schlesisches Tor, Berlin, Germany"
 description: "U1/2 train arriving"
 camera: "Google, Pixel 9 Pro"

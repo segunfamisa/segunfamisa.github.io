@@ -2,7 +2,7 @@
 layout: photo
 title: "Wet city street reflecting buildings and traffic lights at d..."
 date: 2025-11-24 22:28:46
-image: "/assets/images/photos/wet-city-street-reflecting-buildings-and-traffic-lights-at-dusk-iyIt2M6wes.jpg"
+unsplash_id: "iyIt2M_6wes"
 location: "Toronto, ON, Canada"
 description: "Wet city street reflecting buildings and traffic lights at dusk"
 camera: "SONY, ILCE-7CM2"
