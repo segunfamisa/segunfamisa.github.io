@@ -30,6 +30,8 @@ nav:
     url: /
   - title: posts
     url: /posts/
+  - title: photos
+    url: /photos/
   - title: about
     url: /about/
 
@@ -58,6 +60,14 @@ search:
   json_path: /search.json
   limit: 8
   library_url: https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js
+
+collections:
+  albums:
+    output: true
+    permalink: /photos/albums/:slug/
+  photos:
+    output: true
+    permalink: /photos/albums/:path/
 
 permalink: /posts/:slug
 
