@@ -3,7 +3,6 @@ layout: default
 title: "Photos"
 permalink: /photos/
 class: photography-layout
-custom_css: ["photography"]
 ---
 <div class="site-container">
   

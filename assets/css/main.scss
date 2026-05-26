@@ -1,3 +1,5 @@
+---
+---
 /* Design tokens */
 
 :root {
@@ -992,3 +994,8 @@ blockquote {
     gap: 2px;
   }
 }
+
+@import "photography/type";
+@import "photography/spacing";
+@import "photography/main";
+
