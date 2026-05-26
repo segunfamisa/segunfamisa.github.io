@@ -1,7 +1,13 @@
 ---
 layout: default
 class: photography-layout
----
+{% if page.unsplash_id %}
+  {% assign img_url = "https://images.unsplash.com/" | append: page.unsplash_id | append: "?auto=format&fit=max&w=1600&q=85" %}
+  {% assign download_url = "https://images.unsplash.com/" | append: page.unsplash_id %}
+{% else %}
+  {% assign img_url = page.image | relative_url %}
+  {% assign download_url = page.image | relative_url %}
+{% endif %}
 <div class="site-container">
   
   <!-- Back Link & Header -->
@@ -43,7 +49,7 @@ class: photography-layout
       </div>
       
       <div>
-        <a href="{{ page.image | relative_url }}" download class="modal-download-btn" target="_blank" rel="noopener">
+        <a href="{{ download_url }}" download class="modal-download-btn" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -57,7 +63,7 @@ class: photography-layout
 
   <!-- Main Photo Display -->
   <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--space-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-xl);">
-    <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" fetchpriority="high" style="max-height: 75vh; width: auto; max-width: 100%; border-radius: var(--radius-sm); box-shadow: var(--shadow);">
+    <img src="{{ img_url }}" alt="{{ page.title | escape }}" fetchpriority="high" style="max-height: 75vh; width: auto; max-width: 100%; border-radius: var(--radius-sm); box-shadow: var(--shadow);">
   </div>
 
   <!-- Info Grid -->

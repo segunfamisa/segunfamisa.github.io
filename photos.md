@@ -12,13 +12,20 @@ class: photography-layout
     {% assign feed_items = site.photos | concat: site.albums | sort: "date" | reverse %}
     {% for item in feed_items %}
       {% if item.collection == 'photos' %}
+        {% if item.unsplash_id %}
+          {% assign img_url = "https://images.unsplash.com/" | append: item.unsplash_id | append: "?auto=format&fit=crop&w=800&q=80" %}
+          {% assign original_url = "https://images.unsplash.com/" | append: item.unsplash_id | append: "?auto=format&fit=max&w=1600&q=85" %}
+        {% else %}
+          {% assign img_url = item.image | relative_url %}
+          {% assign original_url = item.image | relative_url %}
+        {% endif %}
         <!-- Photo Card -->
         <div class="photo-card" 
              data-slug="{{ item.slug }}"
              data-title="{{ item.title | escape }}" 
              data-desc="{{ item.description | escape }}" 
-             data-img-url="{{ item.image | relative_url }}" 
-             data-original-url="{{ item.image | relative_url }}"
+             data-img-url="{{ img_url }}" 
+             data-original-url="{{ original_url }}"
              data-camera="{{ item.camera | default: '' | escape }}"
              data-lens="{{ item.lens | default: '' | escape }}"
              data-aperture="{{ item.aperture | default: '' | escape }}"
@@ -29,7 +36,7 @@ class: photography-layout
              data-date="{{ item.date | date: '%B %d, %Y' }}"
              data-tags="{{ item.tags | join: ',' | escape }}">
           
-          <img src="{{ item.image | relative_url }}" 
+          <img src="{{ img_url }}" 
                alt="{{ item.title | escape }}" 
                {% if forloop.first %}
                  fetchpriority="high"
@@ -78,7 +85,12 @@ class: photography-layout
         <article class="album-card">
           <a href="{{ item.url | relative_url }}" class="album-cover-wrapper">
             {% if cover_photo %}
-              <img src="{{ cover_photo.image | relative_url }}" alt="{{ item.title }} Cover" class="album-cover" loading="lazy">
+              {% if cover_photo.unsplash_id %}
+                {% assign cover_img_url = "https://images.unsplash.com/" | append: cover_photo.unsplash_id | append: "?auto=format&fit=crop&w=800&q=80" %}
+              {% else %}
+                {% assign cover_img_url = cover_photo.image | relative_url %}
+              {% endif %}
+              <img src="{{ cover_img_url }}" alt="{{ item.title }} Cover" class="album-cover" loading="lazy">
               
               <!-- Album Cover Badge (visible in normal state, fades out on hover) -->
               <div class="album-cover-badge">
