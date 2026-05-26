@@ -58,6 +58,9 @@
         <div class="photo-description-pane">
           <h3 class="exif-title">Description</h3>
           <p id="modal-photo-desc">Detailed photo description goes here...</p>
+          <div id="modal-attribution" style="margin-top: 12px; margin-bottom: 12px; font-size: var(--text-sm); color: var(--muted); display: none;">
+            Photo by <a id="modal-author-link" href="#" target="_blank" rel="noopener" style="color: var(--content-link); text-decoration: underline; font-weight: 500;">Author</a> on <a id="modal-unsplash-link" href="#" target="_blank" rel="noopener" style="color: var(--content-link); text-decoration: underline; font-weight: 500;">Unsplash</a>
+          </div>
           <div id="modal-photo-tags" class="photo-tags">
             <!-- Dynamic tags list -->
           </div>
@@ -166,6 +169,9 @@ function initLightbox() {
   const modalDate = document.getElementById('modal-photo-date');
   const modalTags = document.getElementById('modal-photo-tags');
   const modalDownload = document.getElementById('modal-download-link');
+  const modalAttribution = document.getElementById('modal-attribution');
+  const modalAuthorLink = document.getElementById('modal-author-link');
+  const modalUnsplashLink = document.getElementById('modal-unsplash-link');
   
   // EXIF Elements
   const exifCamera = document.getElementById('modal-exif-camera');
@@ -192,6 +198,15 @@ function initLightbox() {
       closeLightbox();
     });
   }
+
+  // Handle native close (e.g. Escape key) — clean up hash & scroll lock
+  dialog.addEventListener('close', () => {
+    document.body.style.overflow = '';
+    currentCard = null;
+    if (window.location.hash) {
+      history.pushState(null, null, window.location.pathname + window.location.search);
+    }
+  });
 
   // Close when clicking outside content (on the backdrop)
   dialog.addEventListener('click', (event) => {
@@ -265,6 +280,20 @@ function initLightbox() {
     modalDesc.textContent = desc || "No description provided.";
     modalDate.textContent = date || "";
     modalDownload.href = originalUrl;
+
+    // Attribution setup
+    const authorName = card.getAttribute('data-author-name');
+    const authorLink = card.getAttribute('data-author-link');
+    const unsplashId = card.getAttribute('data-unsplash-id');
+
+    if (unsplashId) {
+      modalAttribution.style.display = 'block';
+      modalAuthorLink.textContent = authorName || "Segun Famisa";
+      modalAuthorLink.href = authorLink || "https://unsplash.com/@segunfamisa";
+      modalUnsplashLink.href = `https://unsplash.com/photos/${unsplashId}`;
+    } else {
+      modalAttribution.style.display = 'none';
+    }
 
     // Location setup
     if (location) {

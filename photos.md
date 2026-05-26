@@ -34,7 +34,10 @@ class: photography-layout
              data-focal="{{ item.focal | default: '' | escape }}"
              data-location="{{ item.location | default: '' | escape }}"
              data-date="{{ item.date | date: '%B %d, %Y' }}"
-             data-tags="{{ item.tags | join: ',' | escape }}">
+             data-tags="{{ item.tags | join: ',' | escape }}"
+             data-unsplash-id="{{ item.unsplash_id }}"
+             data-author-name="Segun Famisa"
+             data-author-link="https://unsplash.com/@segunfamisa">
           
           <img src="{{ img_url }}" 
                alt="{{ item.title | escape }}" 
@@ -134,5 +137,19 @@ class: photography-layout
   </div>
 
 </div>
+
+<script>
+// Mark photo cards as loaded when their image finishes loading
+document.querySelectorAll('.photo-card').forEach(card => {
+  const img = card.querySelector('img');
+  if (!img) return;
+  if (img.complete && img.naturalHeight > 0) {
+    card.classList.add('loaded');
+  } else {
+    img.addEventListener('load', () => card.classList.add('loaded'), { once: true });
+    img.addEventListener('error', () => card.classList.add('loaded'), { once: true });
+  }
+});
+</script>
 
 {% include photography_lightbox.html %}

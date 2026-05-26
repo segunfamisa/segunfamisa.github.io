@@ -74,6 +74,11 @@ class: photography-layout
       <div class="photo-description-pane">
         <h3 class="exif-title">Description</h3>
         <p>{{ page.description }}</p>
+        {% if page.unsplash_id %}
+        <div class="photo-attribution" style="margin-top: var(--space-xs); font-size: var(--text-sm); color: var(--muted);">
+          Photo by <a href="https://unsplash.com/@segunfamisa" target="_blank" rel="noopener" style="color: var(--content-link); text-decoration: underline; font-weight: 500;">Segun Famisa</a> on <a href="https://unsplash.com/photos/{{ page.unsplash_id }}" target="_blank" rel="noopener" style="color: var(--content-link); text-decoration: underline; font-weight: 500;">Unsplash</a>
+        </div>
+        {% endif %}
         
         {% if page.tags %}
         <div class="photo-tags">
