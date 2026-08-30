@@ -2,9 +2,9 @@
 layout: post
 title: "Designing Android's missing WorkManager test rule"
 slug: androids-missing-work-manager-test-rule
-description: Designing Android's missing WorkManagerTestRule to make testing WorkManager easier
+description: Designing Android's missing WorkManagerTestRule to make testing work manager easier
 permalink: /posts/androids-missing-work-manager-test-rule
-excerpt: Designing Android's missing WorkManagerTestRule to make testing WorkManager easier
+excerpt: Designing Android's missing WorkManagerTestRule to make testing work manager easier
 date: 2026-08-30 07:00:00 +0100
 tags: [android]
 ---
@@ -76,7 +76,7 @@ fun `sync all drops all prior sync requests`() = runTest() {
 
 By the time I want test various combinations of work state, like failed sync, retries, etc, I will be doing a lot of these checks queries, and driver calls. Then, when I want to do it for another worker, I have to do the same scaffolding - [initialising the work manager test init helper](https://developer.android.com/reference/androidx/work/testing/WorkManagerTestInitHelper), and execute various APIs to enqueue work and query the work state.
 
-Over time, I have found that these operations were finite, in some sence. I typically would do things like: make a certain work run (whether by tag, or unique name, or by id), confirm that a certain work is cancelled, and so on.
+Over time, I have found that these operations were finite, in some sense. I typically would do things like: make a certain work run (whether by tag, or unique name, or by id), confirm that a certain work is cancelled, and so on.
 
 So, naturally, I started thinking about how to stop writing all these things over, without creating a `BaseWorkManagerTest`, because [test rules are better for composition, than a base test class](https://ncorti.com/blog/junit-rules)[^3].
 
@@ -195,7 +195,7 @@ fun WorkManagerTestRule.setAllConstraintsMet(workSpecId: UUID) {
 }
 ```
 
-I couldn't possibly figure out whatever everyone would like to do, so I decided to expose the driver, and the work manager as well, so if there's some operation that the rule did not support, you could write your own extension and implement it.
+I couldn't possibly figure out whatever everyone would like to do, so I decided to expose the driver, and the work manager as well, and if there's some operation that the rule does not support, you could write your own extension and implement it.
 
 The test rule helps me to hide the complexities involved in the work manager lifecycle - which in itself is complex, and tends to bring the complexity into the test code, and I suspect this is why I haven't seen a lot of these integration tests in the project I'm working on.
 
