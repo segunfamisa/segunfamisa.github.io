@@ -4,3 +4,4 @@ _site/
 node_modules/
 .DS_Store
 .sequoia-state.json
+.jekyll-metadata
