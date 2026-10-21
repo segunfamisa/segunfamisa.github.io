@@ -7,6 +7,7 @@ permalink: /posts/androids-missing-work-manager-test-rule
 excerpt: Designing Android's missing WorkManagerTestRule to make testing work manager easier
 date: 2026-08-30 07:00:00 +0100
 tags: [android]
+standard_document_at_uri: "at://did:plc:a5mekodp4afxadlpr4hp2wci/site.standard.document/3mygbnsw2ob2o"
 ---
 
 > TL;DR - create a work manager rule to make your tests easier to write. It's not hard to do, and it pays off.
