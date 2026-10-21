@@ -1,6 +1,5 @@
 ---
 ---
-@use "sass:meta";
 
 /* Design tokens */
 
@@ -996,7 +995,3 @@ blockquote {
     gap: 2px;
   }
 }
-
-@include meta.load-css("photography/type");
-@include meta.load-css("photography/spacing");
-@include meta.load-css("photography/main");
